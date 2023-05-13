@@ -8,6 +8,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.HomePage;
+import pages.MyAccountPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -201,4 +203,26 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
+    //AccountDetails sayfasina gider.
+
+    public static void goToAccountDetails(){
+        HomePage homePage = new HomePage();
+        MyAccountPage myAccount = new MyAccountPage();
+        Driver.getDriver().get(ConfigReader.getProperty("homePage_Url"));
+        homePage.signIn.click();
+        //Giris yapildi
+        homePage.usernameOrEmailAddressKutusu.sendKeys(ConfigReader.getProperty("emailSuhaas"), Keys.TAB, ConfigReader.getProperty("passwordSuhass"), Keys.ENTER);
+        ReusableMethods.waitWithThreadSleep(3);
+        ReusableMethods.scrollEnd();
+        ReusableMethods.visibleWait(homePage.myAccount, 15);
+        //MyAccount sayfasina gidildi
+        homePage.myAccount.click();
+        ReusableMethods.waitWithThreadSleep(3);
+        ReusableMethods.scrollEnd();
+        ReusableMethods.waitWithThreadSleep(3);
+        //Account Details sayfasina tiklandi
+        myAccount.accountDetails.click();
+    }
+
 }

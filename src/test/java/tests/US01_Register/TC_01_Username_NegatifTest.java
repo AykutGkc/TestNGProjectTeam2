@@ -37,7 +37,5 @@ public class TC_01_Username_NegatifTest {
         ReusableMethods.waitWithThreadSleep(4);
 
         Driver.closeDriver();
-
-
     }
 }
