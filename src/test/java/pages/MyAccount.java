@@ -168,7 +168,13 @@ public class MyAccount {
 
 
 
-@FindBy(xpath = "(//*[@class='text-uppercase text-center mb-0'])[4]") public WebElement accountDetails;
-@FindBy(xpath = "//button[@value='Save changes']") public WebElement saveChangesButton;
+    @FindBy(xpath = "(//*[@class='text-uppercase text-center mb-0'])[4]") public WebElement accountDetails;
+    @FindBy(xpath = "//button[@value='Save changes']") public WebElement saveChangesButton;
+
+    //HomePAge
+    @FindBy(xpath = "//span[text()='Sign In']") public WebElement signIn;
+    @FindBy(xpath = "//input[@id='username']") public WebElement usernamOrEmailAddressKutusu;
+    @FindBy(xpath = "//a[text()='My Account']") public WebElement myAccount;
+
 
 }

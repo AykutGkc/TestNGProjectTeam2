@@ -15,6 +15,7 @@ public class TC01_AccountDetailsIsDisplay {
 
     @Test
     public void KullaniciHesapDetaylariTesti() {
+
         Driver.getDriver().get(ConfigReader.getProperty("homePage_Url"));
 
         //US-05 TC-01 Kullanıcı hesap detaylarını (Account Details) görebilmeli
@@ -37,6 +38,7 @@ public class TC01_AccountDetailsIsDisplay {
         ReusableMethods.scrollEnd();
         Assert.assertTrue(myAccount.saveChangesButton.isDisplayed());
         Driver.closeDriver();
+
 
     }
 
