@@ -17,7 +17,6 @@ public class HomePage {
 
 
 
-@FindBy(xpath = "fgdsgdsb") public WebElement abc;
 
 
 
@@ -26,5 +25,151 @@ public class HomePage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@FindBy(xpath = "//span[text()='Sign In']") public WebElement signIn;
+@FindBy(xpath = "//input[@id='username']") public WebElement usernamOrEmailAddressKutusu;
+@FindBy(xpath = "//a[text()='My Account']") public WebElement myAccount;
 
 }
