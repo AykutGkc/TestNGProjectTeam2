@@ -10,21 +10,22 @@ import utilities.ReusableMethods;
 
 import java.security.Key;
 
-public class TC_02_AccountInformationChange {
+public class TC_02_AccountInformationChange extends AccountDetailsWebBase{
     AccountDetailsPage accountDetailsPage;
     MyAccountPage myAccountPage;
     @Test
-    public void AccontInformationChange() {
+    public void AccontInformationChange(){
 
         //First name, Last name, Display name ve Email address bilgilerini değiştirebilmeli
 
         accountDetailsPage= new AccountDetailsPage();
         myAccountPage=new MyAccountPage();
-        ReusableMethods.goToAccountDetails();
+
         accountDetailsPage.FirstNameKutusu.sendKeys(ConfigReader.getProperty("NewName"), Keys.TAB,
                 ConfigReader.getProperty("NewSurname"),Keys.TAB,Keys.DELETE,
                 ConfigReader.getProperty("NewDisplayName"),Keys.TAB,Keys.DELETE,
                 ConfigReader.getProperty("NewEmailAddress"));
+        ReusableMethods.waitWithThreadSleep(2);
         ReusableMethods.scrollEnd();
         myAccountPage.saveChangesButton.click();
         Assert.assertTrue(accountDetailsPage.changeSucces.isDisplayed());
