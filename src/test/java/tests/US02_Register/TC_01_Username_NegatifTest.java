@@ -15,19 +15,20 @@ public class TC_01_Username_NegatifTest {
         ExcelUtils excelUtils = new ExcelUtils("src/test/java/resourcesErel/veri.xlsx", "veriler");
         System.out.println(Arrays.deepToString(excelUtils.getDataArray()));
     }
-    @Test(dataProvider = "ihtimaller",dataProviderClass = DataProviderUtils.class)
+
+    @Test(dataProvider = "ihtimaller", dataProviderClass = DataProviderUtils.class)
     public void test2(String userName) {
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));
-        HomePage homePage=new HomePage();
+        HomePage homePage = new HomePage();
         homePage.register.click();
         ReusableMethods.waitWithThreadSleep(3);
         homePage.signup.click();
         ReusableMethods.waitWithThreadSleep(2);
         homePage.username.click();
         ReusableMethods.waitWithThreadSleep(2);
-        homePage.username.sendKeys(userName,Keys.TAB);
-       ReusableMethods.waitWithThreadSleep(2);
-       homePage.email.sendKeys("erel@gmail.com",Keys.TAB);
+        homePage.username.sendKeys(userName, Keys.TAB);
+        ReusableMethods.waitWithThreadSleep(2);
+        homePage.email.sendKeys("erel@gmail.com", Keys.TAB);
         ReusableMethods.waitWithThreadSleep(2);
         homePage.password.sendKeys("sfdsdfsaA");
         ReusableMethods.waitWithThreadSleep(2);
