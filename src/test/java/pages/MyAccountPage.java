@@ -169,7 +169,7 @@ public class MyAccountPage {
 
 
     @FindBy(xpath = "(//*[@class='text-uppercase text-center mb-0'])[4]") public WebElement accountDetails;
-    @FindBy(xpath = "//button[@value='Save changes']") public WebElement saveChangesButton;
+    @FindBy(xpath = "//button[@name='save_account_details']") public WebElement saveChangesButton;
 
 
 
