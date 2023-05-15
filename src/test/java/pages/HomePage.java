@@ -9,7 +9,7 @@ public class HomePage {
     public HomePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-@FindBy(css = "*[class='login inline-type'] ") public WebElement register;
+    @FindBy(css = "*[class='login inline-type'] ") public WebElement register;
     @FindBy(xpath = "//*[@href='signup']" ) public WebElement signup;
     @FindBy(xpath = "//*[@id='reg_username']" ) public WebElement username;
     @FindBy(xpath = "//*[@type='email']" ) public WebElement email;
@@ -165,8 +165,8 @@ public class HomePage {
 
 
 
-
-
+  
+  
 @FindBy(xpath = "//span[text()='Sign In']") public WebElement signIn;
 @FindBy(xpath = "//a[text()='My Account']") public WebElement myAccount;
 @FindBy(xpath = "//input[@id='username']") public WebElement usernameOrEmailAddressKutusu;
