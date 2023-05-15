@@ -1,44 +1,48 @@
-package tests.US21_CouponIleAlışveriş;
+package tests.US19_OrdersDetails;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.BillingDetailsPages;
-import pages.HomePage;
-import pages.MyAccountPage;
-import pages.ShoppingCartPages;
+import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_08_EnterYourCod {
-    MyAccountPage myAccountPage = new MyAccountPage();
+public class TC_06_PlaceOrder {
+    VendorGirisPage vendorGirisPage = new VendorGirisPage();
+    MyAccountPage myAccountPage=new MyAccountPage();
     ShoppingCartPages shoppingCartPages=new ShoppingCartPages();
-    HomePage homePage=new HomePage();
-
-
     BillingDetailsPages billingDetailsPages=new BillingDetailsPages();
-
+    HomePage homePage=new HomePage();
+    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     @Test
     public void test01() {
         Driver.getDriver().get(ConfigReader.getProperty("pearlyMarket_Url"));
-        myAccountPage.accountButton.click();
-        myAccountPage.accountsignInButton.click();
-        myAccountPage.usernameSignInInput.sendKeys(ConfigReader.getProperty("email"));
-        myAccountPage.passwordSignInInput.sendKeys(ConfigReader.getProperty("password"));
-        myAccountPage.signInloginButton.click();
+
+        js.executeScript("arguments[0].click();", vendorGirisPage.vendorsignin); //Tiklamayi bu sekilde handle ederiz
+        //email girilir
+        js.executeScript("arguments[0].click();", vendorGirisPage.vendorusername);
+        vendorGirisPage.vendorusername.sendKeys(ConfigReader.getProperty("emaild" ), Keys.TAB);
+        //password girilir
+        vendorGirisPage.vendorpassword.sendKeys(ConfigReader.getProperty("passwordd"));
         ReusableMethods.waitWithThreadSleep(4);
-        myAccountPage.searchBox.click();
-        ReusableMethods.waitWithThreadSleep(2);
-        myAccountPage.searchBox.sendKeys("Ayakkabı", Keys.ENTER);
-        ReusableMethods.visibleWait(homePage.myAccount, 15);
+        vendorGirisPage.vendorsigninbutonu.click();
+        ReusableMethods.waitWithThreadSleep(4);
+        js.executeScript("arguments[0].click();", vendorGirisPage.vendorsearchbox);
+        vendorGirisPage.vendorsearchbox.sendKeys("Ayakkabı", Keys.ENTER);
+        vendorGirisPage.vendorcart.click();
+        ReusableMethods.visibleWait(homePage.myAccount, 10);
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].click();", myAccountPage.addtoCartSimgesi); //Tiklamayi bu sekilde handle ederiz
-        ReusableMethods.waitWithThreadSleep(2);
+        ReusableMethods.waitWithThreadSleep(4);
         js.executeScript("arguments[0].click();", shoppingCartPages.checkout);
         ReusableMethods.waitWithThreadSleep(2);
+        Assert.assertTrue(shoppingCartPages.paymentMethods.isEnabled());
+        ReusableMethods.waitWithThreadSleep(3);
+        shoppingCartPages.payatthedoor.click();
         //Kullanici Billing Adres alanindaki "add" secenegine tiklar
         WebElement addBillingAdressButton = (WebElement) js.executeScript("return document.querySelector(\"#main > div > div > div > div > div > div > div > div.woocommerce-Addresses.addresses.row > div:nth-child(1) > div > a\")");
         // js.executeScript("arguments[0].click();", addBillingAdressButton);
@@ -46,12 +50,12 @@ public class TC_08_EnterYourCod {
         //Kullanici Fist name Alanini doldurur (Emre)
         myAccountPage.addFirstName.clear();
         ReusableMethods.waitWithThreadSleep(2);
-        myAccountPage.addFirstName.sendKeys(ConfigReader.getProperty("firstName"));
+        myAccountPage.addFirstName.sendKeys("Erel");
         ReusableMethods.waitWithThreadSleep(2);
         //Kullanici Last Name Alanini doldurur (Soydemir)
         myAccountPage.addLastName.clear();
         ReusableMethods.waitWithThreadSleep(2);
-        myAccountPage.addLastName.sendKeys(ConfigReader.getProperty("lastName"));
+        myAccountPage.addLastName.sendKeys("OZTURK");
         ReusableMethods.waitWithThreadSleep(2);
         //Kullanici Country/Region Alanini doldurur (France)
         Select select;
@@ -68,14 +72,6 @@ public class TC_08_EnterYourCod {
         ReusableMethods.waitWithThreadSleep(2);
         myAccountPage.addBillingCity.sendKeys(ConfigReader.getProperty("billingCity"));
         ReusableMethods.waitWithThreadSleep(2);
-        js.executeScript("arguments[0].click();", billingDetailsPages.enterYourCod);
-        ReusableMethods.waitWithThreadSleep(2);
-        js.executeScript("arguments[0].click();", billingDetailsPages.enterplace);
-        billingDetailsPages.enterYourCod.sendKeys(ConfigReader.getProperty("couponno"));
-
-        ReusableMethods.waitWithThreadSleep(2);
-        js.executeScript("arguments[0].click();", billingDetailsPages.applycoupon);
-        ReusableMethods.waitWithThreadSleep(2);
           js.executeScript("arguments[0].click();", shoppingCartPages.placeorder);
-    }
+}
 }

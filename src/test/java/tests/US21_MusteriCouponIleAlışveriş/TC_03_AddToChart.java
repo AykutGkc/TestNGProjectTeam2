@@ -1,39 +1,34 @@
-package tests.US21_CouponIleAlışveriş;
+package tests.US21_MusteriCouponIleAlışveriş;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import pages.MyAccountPage;
-import pages.ShoppingCartPages;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_05_FaturaAdresiGörme {
+public class TC_03_AddToChart {
     MyAccountPage myAccountPage = new MyAccountPage();
-    ShoppingCartPages shoppingCartPages=new ShoppingCartPages();
-    HomePage homePage=new HomePage();
+
     @Test
     public void test01() {
         Driver.getDriver().get(ConfigReader.getProperty("pearlyMarket_Url"));
         myAccountPage.accountButton.click();
         myAccountPage.accountsignInButton.click();
+        //email girilir
         myAccountPage.usernameSignInInput.sendKeys(ConfigReader.getProperty("email"));
+        //password girilir
         myAccountPage.passwordSignInInput.sendKeys(ConfigReader.getProperty("password"));
         myAccountPage.signInloginButton.click();
         ReusableMethods.waitWithThreadSleep(4);
+        //SearchBox a tıklar
         myAccountPage.searchBox.click();
         ReusableMethods.waitWithThreadSleep(2);
+        //SearchBox a aradığı ürünü girer
         myAccountPage.searchBox.sendKeys("Ayakkabı", Keys.ENTER);
-        ReusableMethods.visibleWait(homePage.myAccount, 15);
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].click();", myAccountPage.addtoCartSimgesi); //Tiklamayi bu sekilde handle ederiz
-        ReusableMethods.waitWithThreadSleep(2);
-        js.executeScript("arguments[0].click();", shoppingCartPages.checkout);
-        ReusableMethods.waitWithThreadSleep(2);
-        Assert.assertTrue(shoppingCartPages.billingDetails.isEnabled());
-
+        ReusableMethods.waitWithThreadSleep(3);
+        //SearchBox a aradığı ürünü girdikten sonra sepete ekler
+        myAccountPage.addtoCartSimgesi.click();
     }
 }
+

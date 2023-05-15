@@ -1,4 +1,4 @@
-package tests.US21_CouponIleAlışveriş;
+package tests.US21_MusteriCouponIleAlışveriş;
 
 import org.testng.annotations.Test;
 import pages.MyAccountPage;
