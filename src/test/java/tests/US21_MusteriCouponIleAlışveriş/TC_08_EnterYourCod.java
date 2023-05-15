@@ -1,10 +1,9 @@
-package tests.US21_CouponIleAlışveriş;
+package tests.US21_MusteriCouponIleAlışveriş;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.BillingDetailsPages;
 import pages.HomePage;
@@ -14,7 +13,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_07_AlısverisTamamlama {
+public class TC_08_EnterYourCod {
     MyAccountPage myAccountPage = new MyAccountPage();
     ShoppingCartPages shoppingCartPages=new ShoppingCartPages();
     HomePage homePage=new HomePage();
@@ -42,7 +41,7 @@ public class TC_07_AlısverisTamamlama {
         ReusableMethods.waitWithThreadSleep(2);
         //Kullanici Billing Adres alanindaki "add" secenegine tiklar
         WebElement addBillingAdressButton = (WebElement) js.executeScript("return document.querySelector(\"#main > div > div > div > div > div > div > div > div.woocommerce-Addresses.addresses.row > div:nth-child(1) > div > a\")");
-       // js.executeScript("arguments[0].click();", addBillingAdressButton);
+        // js.executeScript("arguments[0].click();", addBillingAdressButton);
         ReusableMethods.waitWithThreadSleep(2);
         //Kullanici Fist name Alanini doldurur (Emre)
         myAccountPage.addFirstName.clear();
@@ -62,13 +61,21 @@ public class TC_07_AlısverisTamamlama {
         //Kullanici Street adress Alanini doldurur (Jeaen Pierre)
         myAccountPage.addBillingAddress.clear();
         ReusableMethods.waitWithThreadSleep(2);
-       myAccountPage.addBillingAddress.sendKeys(ConfigReader.getProperty("billingAddress"));
+        myAccountPage.addBillingAddress.sendKeys(ConfigReader.getProperty("billingAddress"));
         ReusableMethods.waitWithThreadSleep(2);
         //Kullanici Town/City Alanini doldurur (Saint Etienne)
         myAccountPage.addBillingCity.clear();
         ReusableMethods.waitWithThreadSleep(2);
         myAccountPage.addBillingCity.sendKeys(ConfigReader.getProperty("billingCity"));
         ReusableMethods.waitWithThreadSleep(2);
-     //   js.executeScript("arguments[0].click();", shoppingCartPages.placeorder);
+        js.executeScript("arguments[0].click();", billingDetailsPages.enterYourCod);
+        ReusableMethods.waitWithThreadSleep(2);
+        js.executeScript("arguments[0].click();", billingDetailsPages.enterplace);
+        billingDetailsPages.enterYourCod.sendKeys(ConfigReader.getProperty("couponno"));
+
+        ReusableMethods.waitWithThreadSleep(2);
+        js.executeScript("arguments[0].click();", billingDetailsPages.applycoupon);
+        ReusableMethods.waitWithThreadSleep(2);
+          js.executeScript("arguments[0].click();", shoppingCartPages.placeorder);
     }
 }
