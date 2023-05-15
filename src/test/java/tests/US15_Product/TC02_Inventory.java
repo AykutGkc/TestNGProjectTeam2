@@ -1,17 +1,17 @@
-package tests.US_15;
+package tests.US15_Product;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.MyAccountRmzn;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC03_Shipping {
-
+public class TC02_Inventory {
     @Test
-    public void shippingProcess() {
+    public void testName() throws InterruptedException {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
         MyAccountRmzn myAccountRmzn=new MyAccountRmzn();
@@ -32,14 +32,22 @@ public class TC03_Shipping {
         Actions actions=new Actions(Driver.getDriver());//Action Objesi tiklandi
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();//Sayfanin asagina gidilir
         actions.sendKeys(Keys.ARROW_DOWN).perform();////Sayfanin asagina gidilir
+        myAccountRmzn.inventorySku.sendKeys("100"+Keys.ENTER);//Inventory bolumune 100 yazar
+        myAccountRmzn.manageStock.click();//ManageStock bolumu tiklanir
+        myAccountRmzn.stockQty.sendKeys(ConfigReader.getProperty("randomnumber"));
 
-        myAccountRmzn.shipping.click();
-        myAccountRmzn.weight.sendKeys(ConfigReader.getProperty("weight"+Keys.ENTER));
-        myAccountRmzn.length.sendKeys(ConfigReader.getProperty("length"+Keys.ENTER));
-        myAccountRmzn.height.sendKeys(ConfigReader.getProperty("width"+Keys.ENTER));
-        myAccountRmzn.height.sendKeys(ConfigReader.getProperty("height"+Keys.ENTER));
+        Select select=new Select(myAccountRmzn.allowBackorders);
+        select.selectByIndex(2);
+        Thread.sleep(2);
+        myAccountRmzn.soldindividually.click();
+        myAccountRmzn.manageStock.click();
+
+        Select select1=new Select(myAccountRmzn.stockstuckddm);
+        select1.selectByVisibleText("In stock");
 
 
+        Thread.sleep(5);
+        Driver.closeDriver();
 
 
     }

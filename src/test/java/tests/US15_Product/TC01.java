@@ -1,19 +1,18 @@
-package tests.US_15;
+package tests.US15_Product;
 
-import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MyAccountRmzn;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC02_Inventory {
+public class TC01 {
+
     @Test
-    public void testName() throws InterruptedException {
+    public void test1() {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
         MyAccountRmzn myAccountRmzn=new MyAccountRmzn();
@@ -34,22 +33,29 @@ public class TC02_Inventory {
         Actions actions=new Actions(Driver.getDriver());//Action Objesi tiklandi
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();//Sayfanin asagina gidilir
         actions.sendKeys(Keys.ARROW_DOWN).perform();////Sayfanin asagina gidilir
-        myAccountRmzn.inventorySku.sendKeys("100"+Keys.ENTER);//Inventory bolumune 100 yazar
-        myAccountRmzn.manageStock.click();//ManageStock bolumu tiklanir
-        myAccountRmzn.stockQty.sendKeys(ConfigReader.getProperty("randomnumber"));
+        Assert.assertTrue(myAccountRmzn.invontery.isDisplayed());//Inventory gorulur oldugu dogrulanir.
+        Assert.assertTrue(myAccountRmzn.shipping.isDisplayed());//Shhipping bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(myAccountRmzn.attributtes.isDisplayed());//Attribuutes bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(myAccountRmzn.linked.isDisplayed());//Linked bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(myAccountRmzn.seo.isDisplayed());//Seo bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(myAccountRmzn.toptanUrunGosterme.isDisplayed());//Toptan Urun Gosterme bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(myAccountRmzn.advanced.isDisplayed());//Advanced bolumun gorulur oldugu dogrulanir
 
-        Select select=new Select(myAccountRmzn.allowBackorders);
-        select.selectByIndex(2);
-        Thread.sleep(2);
-        myAccountRmzn.soldindividually.click();
-        myAccountRmzn.manageStock.click();
-
-        Select select1=new Select(myAccountRmzn.stockstuckddm);
-        select1.selectByVisibleText("In stock");
+        System.out.println("TC01 BASARILI ILE SONUCLANDI");
 
 
-        Thread.sleep(5);
-        Driver.closeDriver();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }
