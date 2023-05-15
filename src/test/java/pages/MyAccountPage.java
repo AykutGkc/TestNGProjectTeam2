@@ -179,4 +179,219 @@ public class MyAccountPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Nihat G
+    @FindBy(xpath = "//*[@class='login inline-type']") public WebElement signIn;
+    @FindBy(xpath = "(//input[@id='username'])[1]") public WebElement signInEmail;
+    @FindBy(xpath = "//*[@id='password']") public  WebElement signInPassword;
+    @FindBy(xpath = "//button[@name='login']") public WebElement signInLogin;
+    @FindBy(xpath = "//a[@class='login logout inline-type']")public WebElement signOut;
+    @FindBy(xpath = "//a[text()='My Account']") public WebElement myAccount;
+    @FindBy(xpath = "//a[text()='Addresses']") public WebElement address;
+    @FindBy(xpath = "//*[text()='Billing address']") public WebElement billingAddress;
+    @FindBy(xpath = "//*[text()='Shipping address']") public WebElement shippingAddress;
+    @FindBy(xpath = "(//*[text()='Add'])[1]") public WebElement addBillingButon;
+    @FindBy(xpath = "(//*[text()='Add'])[2]") public WebElement addShippingButon;
+    @FindBy(xpath = "//input[@id='billing_first_name']") public WebElement firstName;
+    @FindBy(xpath = "//*[@value='carl.tagen@fullangle.org']") public WebElement kayitliEmail;
+    @FindBy(xpath = "(//a[@class='edit btn btn-link btn-primary btn-underline mb-4'])[1]") public WebElement editBillingButonu;
+    @FindBy(xpath = "//*[text()='Edit Your Shipping Address']") public WebElement editShippingButon;
+    @FindBy(xpath = "//a[text()='Logout']") public WebElement logout;
+    @FindBy(xpath = "//button[text()='Save address']") public WebElement saweAddress;
+    @FindBy(xpath = "//select[@id='billing_country']") public  WebElement dropdown;
+    @FindBy(xpath = "//*[@id='billing_address_1']") public WebElement streetAdres;
+    @FindBy(xpath = "(//select)[2]") public WebElement provinceDropdown;
+    @FindBy(xpath = "//input[@id='billing_phone']") public WebElement phone;
+    @FindBy(xpath = "//select[@value='TR']") public WebElement ulke;
+    @FindBy(xpath = "//*[@id='email']") public WebElement fakaSiteEmail;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Nihat G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
