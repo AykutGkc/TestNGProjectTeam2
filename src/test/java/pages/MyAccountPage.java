@@ -12,7 +12,7 @@ public class MyAccountPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//*[text()='Orders']" ) public WebElement orders;
-    @FindBy(xpath = "//*[text()='My Account']" ) public WebElement myAccount;
+    @FindBy(xpath = "//*[text()='My Account']" ) public WebElement myAccountt;
     @FindBy(xpath = "//*[@class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']" ) public WebElement browseProducts;
     @FindBy(xpath = "//*[@aria-label='Search']" ) public WebElement searchBox;
     @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']" ) public WebElement addtoCartSimgesi;

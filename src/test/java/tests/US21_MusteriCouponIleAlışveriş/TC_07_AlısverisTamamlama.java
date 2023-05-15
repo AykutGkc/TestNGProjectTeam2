@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.BillingDetailsPages;
+import pages.HomePage;
 import pages.MyAccountPage;
 import pages.ShoppingCartPages;
 import utilities.ConfigReader;
