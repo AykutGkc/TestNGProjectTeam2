@@ -2,46 +2,47 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
+import pages.SepetLocates;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US06 {
-    HomePage homePage;
+   SepetLocates sepetLocates;
     @Test
     public void testsearchbox() {
 
 //Kullanici pearly market sitesine gider
         Driver.getDriver().get(ConfigReader.getProperty("pearlymarketUrl"));
-                homePage=new HomePage();
+               sepetLocates=new SepetLocates();
         ReusableMethods.waitWithThreadSleep(3);
         //Search boxta ürün aratir  Ürünü sepete at BUTONUNA TIKLAR
-        homePage.search.sendKeys("Kitchen Table", Keys.ENTER);
-        homePage.addcartbutton.click();
+        sepetLocates.search.sendKeys("Kitchen Table", Keys.ENTER);
+        sepetLocates.addcartbutton.click();
         //Sepete tiklar
-       homePage.sepet.click();
+       sepetLocates.sepet.click();
        //Ürünün sepette görür
-       Assert.assertTrue(homePage.KitchenTableText.isDisplayed());
+       Assert.assertTrue(sepetLocates.KitchenTableText.isDisplayed());
        //Sepette tikladigi ürün yazisini görür
-       Assert.assertEquals(homePage.KitchenTableText.getText(),"Kitchen Table");
+       Assert.assertEquals(sepetLocates.KitchenTableText.getText(),"Kitchen Table");
        //Ürün Sepetine Geri dönmek icin viewcart butonuna tiklar   //Ürünün sayisini arttirir
-        homePage.viewcartbutton.click(); homePage.plusbutton.click();ReusableMethods.waitWithThreadSleep(3);
+        sepetLocates.viewcartbutton.click();sepetLocates.plusbutton.click();ReusableMethods.waitWithThreadSleep(3);
         //sepeti günceller ve sepete tiklar
-        homePage.updatebutton.click(); homePage.sepet.click();ReusableMethods.waitWithThreadSleep(3);
+        sepetLocates.updatebutton.click();sepetLocates.sepet.click();ReusableMethods.waitWithThreadSleep(3);
       //sepette sayinin arttigini görür
-     Assert.assertTrue(homePage.yeniürünsayisicarpifiyat1.isDisplayed(),"ürünün arrtigini görür");
-     homePage.viewcartbutton.click();ReusableMethods.waitWithThreadSleep(3);
+     Assert.assertTrue(sepetLocates.yeniürünsayisicarpifiyat1.isDisplayed(),"ürünün arrtigini görür");
+     sepetLocates.viewcartbutton.click();ReusableMethods.waitWithThreadSleep(3);
      //Ürün sayisini azaltir ve günceller
-     homePage.minusbutton.click();
-     homePage.updatebutton.click(); ReusableMethods.waitWithThreadSleep(3);
-     homePage.sepet.click();
+     sepetLocates.minusbutton.click();
+     sepetLocates.updatebutton.click(); ReusableMethods.waitWithThreadSleep(3);
+     sepetLocates.sepet.click();
 
-        homePage.viewcartbutton.click();
+       sepetLocates.viewcartbutton.click();
      /*   Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();*/
         //sayfayi asagi indirir
@@ -49,22 +50,30 @@ public class US06 {
        actions1.sendKeys(Keys.PAGE_DOWN).perform();ReusableMethods.waitWithThreadSleep(3);
 
 //fatura bölümüne gider
-        homePage.proceedtocheckout.click();ReusableMethods.waitWithThreadSleep(3);
+        sepetLocates.proceedtocheckout.click();ReusableMethods.waitWithThreadSleep(3);
         Actions actions2=new Actions(Driver.getDriver());  actions2.sendKeys(Keys.ARROW_DOWN).
                 sendKeys(Keys.ARROW_DOWN).  sendKeys(Keys.ARROW_DOWN).perform();
 
-     homePage.firstname.sendKeys("sevil",Keys.TAB,"kesen");;
+     sepetLocates.firstname.sendKeys("sevil",Keys.TAB,"kesen",Keys.TAB,Keys.TAB);;
+Driver.getDriver().findElement(By.xpath("(//*[@value='DE'])[1]")).click();
+    Select select2 = new Select(sepetLocates.ddm);
+        select2.selectByVisibleText("Germany");
 
+        Select select1=new Select(sepetLocates.ddm2);
+        select1.selectByVisibleText("Berlin");
         ReusableMethods.waitWithThreadSleep(3);
-        homePage.streetadress.sendKeys("hauptsr11");
-ReusableMethods.sendKeysJS(homePage.streetadress,"hauptsr11");
-        homePage.streetadress.sendKeys("hauptsr11");ReusableMethods.waitWithThreadSleep(3);
-            homePage.town.sendKeys("Reutlingem");
-homePage.zipcode.sendKeys("76543");
-homePage.phone.sendKeys("017634660854");
-homePage.mail.sendKeys("fatmakesen2023@gmail.com");
-    Select select=new Select(homePage.ddmCountry);
-select.selectByVisibleText("Germany");
 
+
+        sepetLocates.streetadress.sendKeys("hauptsr11");ReusableMethods.waitWithThreadSleep(1);
+          sepetLocates.town.sendKeys("Reutlingem");
+sepetLocates.zipcode.sendKeys("76543");
+sepetLocates.phone.sendKeys("017634660854");
+sepetLocates.mail.sendKeys("fatmakesen2023@gmail.com");
+sepetLocates.placeorder.submit();
+WebElement element=Driver.getDriver().findElement
+        (By.xpath("//p[text()='Thank you. Your order has been received.']"));
+String text=element.getText();
+//formu doldurur ve basariyla alisverisi tammamlar
+Assert.assertEquals(text,"Thank you. Your order has been received.");
     }
 }
