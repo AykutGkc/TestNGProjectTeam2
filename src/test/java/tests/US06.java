@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -40,16 +41,30 @@ public class US06 {
      homePage.updatebutton.click(); ReusableMethods.waitWithThreadSleep(3);
      homePage.sepet.click();
 
-        homePage.viewcartbutton.click();ReusableMethods.waitWithThreadSleep(3);
+        homePage.viewcartbutton.click();
      /*   Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();*/
-       Actions actions=new Actions(Driver.getDriver());
-       actions.sendKeys(Keys.ARROW_DOWN).perform();
+        //sayfayi asagi indirir
+       Actions actions1=new Actions(Driver.getDriver());ReusableMethods.waitWithThreadSleep(3);
+       actions1.sendKeys(Keys.PAGE_DOWN).perform();ReusableMethods.waitWithThreadSleep(3);
+
+//fatura bölümüne gider
+        homePage.proceedtocheckout.click();ReusableMethods.waitWithThreadSleep(3);
+        Actions actions2=new Actions(Driver.getDriver());  actions2.sendKeys(Keys.ARROW_DOWN).
+                sendKeys(Keys.ARROW_DOWN).  sendKeys(Keys.ARROW_DOWN).perform();
+
+     homePage.firstname.sendKeys("sevil",Keys.TAB,"kesen");;
+
         ReusableMethods.waitWithThreadSleep(3);
-        Select select1=new Select(homePage.Ülkebutonu);
-        select1.selectByVisibleText("Germany");
-        Select select2=new Select(homePage.sehirbutonu);
-        select2.selectByVisibleText("Berlin");
+        homePage.streetadress.sendKeys("hauptsr11");
+ReusableMethods.sendKeysJS(homePage.streetadress,"hauptsr11");
+        homePage.streetadress.sendKeys("hauptsr11");ReusableMethods.waitWithThreadSleep(3);
+            homePage.town.sendKeys("Reutlingem");
+homePage.zipcode.sendKeys("76543");
+homePage.phone.sendKeys("017634660854");
+homePage.mail.sendKeys("fatmakesen2023@gmail.com");
+    Select select=new Select(homePage.ddmCountry);
+select.selectByVisibleText("Germany");
 
     }
 }

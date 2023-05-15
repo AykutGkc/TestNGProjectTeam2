@@ -255,12 +255,31 @@ public class HomePage {
     @FindBy  (xpath = "  (//span[@role='textbox'])[2]")
     public WebElement sehirbutonu;
 
+  @FindBy  (xpath = " //a[@class='checkout-button button alt wc-forward'] ")
+  public WebElement proceedtocheckout;
+
+    @FindBy  (xpath = "//input[@name='billing_first_name']")
+    public WebElement firstname;
+    @FindBy  (xpath = "//span[@id='select2-billing_country-container']")
+    public WebElement ddmCountry;
+    @FindBy  (xpath = "//span[@id='select2-billing_country-container']")
+    public WebElement streetadress;
+
+    @FindBy  (xpath = "//span[@id='select2-billing_country-container']")
+    public WebElement town;
+
+    @FindBy  (xpath = "//span[@id='select2-billing_state-container']")
+    public WebElement ddmstate;
 
 
+    @FindBy  (xpath = "//input[@id='billing_postcode']")
+    public WebElement zipcode;
 
+    @FindBy  (xpath = "//input[@id='billing_phone']")
+    public WebElement phone;
 
-
-
+    @FindBy  (xpath = "//input[@id='billing_email']")
+    public WebElement mail;
 
 
 
