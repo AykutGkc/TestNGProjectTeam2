@@ -2,7 +2,6 @@ package tests.US02_Register;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;

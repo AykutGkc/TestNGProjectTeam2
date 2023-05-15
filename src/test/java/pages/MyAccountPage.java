@@ -8,12 +8,14 @@ import utilities.Driver;
 
 public class MyAccountPage {
     public MyAccountPage() {
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
-
+    @FindBy(xpath = "//*[text()='Orders']" ) public WebElement orders;
+    @FindBy(xpath = "//*[text()='My Account']" ) public WebElement myAccount;
+    @FindBy(xpath = "//*[@class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']" ) public WebElement browseProducts;
+    @FindBy(xpath = "//*[@aria-label='Search']" ) public WebElement searchBox;
+    @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']" ) public WebElement addtoCartSimgesi;
 
 
 
@@ -169,7 +171,7 @@ public class MyAccountPage {
 
 
     @FindBy(xpath = "(//*[@class='text-uppercase text-center mb-0'])[4]") public WebElement accountDetails;
-    @FindBy(xpath = "//button[@value='Save changes']") public WebElement saveChangesButton;
+    @FindBy(xpath = "//button[@name='save_account_details']") public WebElement saveChangesButton;
 
 
 

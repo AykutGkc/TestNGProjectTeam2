@@ -113,7 +113,7 @@ public class ReusableMethods {
     //Tüm Sayfa ScreenShot
     public static void fullScrennShot(String name) {
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
-        String dosyaYolu = "TestOutput/screenshot/screenshot" + tarih +name+ ".png";
+        String dosyaYolu = "TestOutput/screenshot/screenshot" + tarih + name + ".png";
         TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
         try {
             FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE), new File(dosyaYolu));
@@ -201,4 +201,5 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
 }
