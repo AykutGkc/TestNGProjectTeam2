@@ -8,8 +8,6 @@ import pages.MyAccountPage;
 import utilities.ConfigReader;
 import utilities.ReusableMethods;
 
-import java.security.Key;
-
 public class TC_02_AccountInformationChange extends AccountDetailsWebBase{
     AccountDetailsPage accountDetailsPage;
     MyAccountPage myAccountPage;
@@ -21,14 +19,13 @@ public class TC_02_AccountInformationChange extends AccountDetailsWebBase{
         accountDetailsPage= new AccountDetailsPage();
         myAccountPage=new MyAccountPage();
 
-        accountDetailsPage.FirstNameKutusu.sendKeys(ConfigReader.getProperty("NewName"), Keys.TAB,
+        accountDetailsPage.FirstNameBox.sendKeys(ConfigReader.getProperty("NewName"), Keys.TAB,
                 ConfigReader.getProperty("NewSurname"),Keys.TAB,Keys.DELETE,
                 ConfigReader.getProperty("NewDisplayName"),Keys.TAB,Keys.DELETE,
                 ConfigReader.getProperty("NewEmailAddress"));
         ReusableMethods.waitWithThreadSleep(2);
         ReusableMethods.scrollEnd();
-        myAccountPage.saveChangesButton.click();
-        Assert.assertTrue(accountDetailsPage.changeSucces.isDisplayed());
+        AccountDetailsWebBase.saveChangesAndSucces();
 
 
     }
