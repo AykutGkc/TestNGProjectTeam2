@@ -3,7 +3,6 @@ package tests.US08_Wishlist;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import pages.MyAccountPage;
 import pages.ProductsPages;
 import pages.WishlistPages;

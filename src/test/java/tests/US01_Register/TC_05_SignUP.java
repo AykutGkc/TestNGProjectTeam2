@@ -3,9 +3,7 @@ package tests.US01_Register;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import utilities.ConfigReader;
-import utilities.DataProviderUtils;
 import utilities.Driver;
 import utilities.ReusableMethods;
 

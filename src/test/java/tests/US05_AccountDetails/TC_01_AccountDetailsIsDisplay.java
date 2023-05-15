@@ -2,7 +2,6 @@ package tests.US05_AccountDetails;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import pages.MyAccountPage;
 import utilities.Driver;
 import utilities.ReusableMethods;

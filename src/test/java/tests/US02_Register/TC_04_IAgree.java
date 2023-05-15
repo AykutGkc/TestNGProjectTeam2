@@ -3,7 +3,6 @@ package tests.US02_Register;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import utilities.*;
 
 import java.io.FileNotFoundException;
