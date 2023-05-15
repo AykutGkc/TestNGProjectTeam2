@@ -1,8 +1,10 @@
 package tests.US05_AccountDetails;
 
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import pages.AccountDetailsPage;
 import pages.HomePage;
 import pages.MyAccountPage;
 import utilities.ConfigReader;
@@ -10,11 +12,12 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class AccountDetailsWebBase {
+
     @BeforeTest
     public void setUp() {
 
         HomePage homePage = new HomePage();
-        MyAccountPage myAccount = new MyAccountPage();
+        MyAccountPage myAccountPage = new MyAccountPage();
         Driver.getDriver().get(ConfigReader.getProperty("homePage_Url"));
         homePage.signIn.click();
         //Giris yapildi
@@ -30,14 +33,22 @@ public class AccountDetailsWebBase {
         ReusableMethods.scrollEnd();
         ReusableMethods.waitWithThreadSleep(3);
         //Account Details sayfasina tiklandi
-        myAccount.accountDetails.click();
+        myAccountPage.accountDetails.click();
 
     }
 
     @AfterTest
     public void tearDown() {
-
-        //Driver.closeDriver();
+        Driver.closeDriver();
 
     }
+
+    public static void saveChangesAndSucces(){
+        MyAccountPage myAccount = new MyAccountPage();
+        AccountDetailsPage accountDetailsPage =new AccountDetailsPage();
+
+        myAccount.saveChangesButton.click();
+        Assert.assertTrue(accountDetailsPage.changeSucces.isDisplayed());
+    }
+
 }
