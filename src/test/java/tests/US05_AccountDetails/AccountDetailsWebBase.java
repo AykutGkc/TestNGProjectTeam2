@@ -3,6 +3,7 @@ package tests.US05_AccountDetails;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import pages.HomePage;
 import pages.MyAccountPage;
 import utilities.ConfigReader;
 import utilities.Driver;
