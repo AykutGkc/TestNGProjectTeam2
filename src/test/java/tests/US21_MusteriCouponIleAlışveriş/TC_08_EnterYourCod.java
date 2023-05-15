@@ -1,4 +1,4 @@
-package tests.US21_CouponIleAlışveriş;
+package tests.US21_MusteriCouponIleAlışveriş;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;

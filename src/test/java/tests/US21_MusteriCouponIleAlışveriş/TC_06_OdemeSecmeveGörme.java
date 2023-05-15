@@ -1,4 +1,4 @@
-package tests.US21_CouponIleAlışveriş;
+package tests.US21_MusteriCouponIleAlışveriş;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -10,7 +10,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_05_FaturaAdresiGörme {
+public class TC_06_OdemeSecmeveGörme {
     MyAccountPage myAccountPage = new MyAccountPage();
     ShoppingCartPages shoppingCartPages=new ShoppingCartPages();
     HomePage homePage=new HomePage();
@@ -32,7 +32,9 @@ public class TC_05_FaturaAdresiGörme {
         ReusableMethods.waitWithThreadSleep(2);
         js.executeScript("arguments[0].click();", shoppingCartPages.checkout);
         ReusableMethods.waitWithThreadSleep(2);
-        Assert.assertTrue(shoppingCartPages.billingDetails.isEnabled());
-
+        Assert.assertTrue(shoppingCartPages.paymentMethods.isEnabled());
+        ReusableMethods.waitWithThreadSleep(3);
+        shoppingCartPages.payatthedoor.click();
+      //  Driver.closeDriver();
     }
 }
