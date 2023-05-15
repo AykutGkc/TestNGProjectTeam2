@@ -327,7 +327,6 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@id='password']") public  WebElement signInPassword;
     @FindBy(xpath = "//button[@name='login']") public WebElement signInLogin;
     @FindBy(xpath = "//a[@class='login logout inline-type']")public WebElement signOut;
-    @FindBy(xpath = "//a[text()='My Account']") public WebElement myAccount;
     @FindBy(xpath = "//a[text()='Addresses']") public WebElement address;
     @FindBy(xpath = "//*[text()='Billing address']") public WebElement billingAddress;
     @FindBy(xpath = "//*[text()='Shipping address']") public WebElement shippingAddress;
