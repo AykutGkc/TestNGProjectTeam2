@@ -10,10 +10,11 @@ public class MyAccountMurat {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+    @FindBy(xpath = "//*[text()='Register']")
+    public WebElement Register;
     @FindBy(xpath = "//*[text()='Sign In']")
     public WebElement signIn;
-   // @FindBy(xpath = "//*[text()='Register']")
-    //public WebElement Register;
 
     @FindBy(id = "username")
     public WebElement username;
@@ -33,6 +34,26 @@ public class MyAccountMurat {
 
     @FindBy(xpath = "//*[text()='Products']")
     public WebElement products;
+    @FindBy(xpath = "//*[text()='Coupons']")// coupons kisminin locateri
+    public WebElement Coupons;
+
+    @FindBy(id = "title")
+    public WebElement title;// kod yazma alani
+    @FindBy(id = "description")
+    public  WebElement descrption;//aciklama yazilan kisim
+    @FindBy(id = "discount_type")
+    public WebElement discount_type; //secim yeri
+    @FindBy(id = "coupon_amount")
+    public WebElement coupon_amount; // miktar girdigimizyer
+    @FindBy(xpath = "//option[text()='Percentage discount']")
+    public WebElement percentageDiscount;
+    @FindBy(id = "expiry_date")
+    public WebElement expiry_date; // tarihin yazildigi yer 2023-12-12
+    @FindBy(xpath = "(//input[@type='submit'])[1]")
+    public WebElement submit;// submit putonu
+
+
+
 
     @FindBy(xpath = "(//*[text()='Add New'])[1]")
     public WebElement addNew;

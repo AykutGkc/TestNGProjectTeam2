@@ -1,4 +1,4 @@
-package tests;
+package tests.US18;
 
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
