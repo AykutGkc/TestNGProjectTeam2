@@ -6,12 +6,68 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.MyAccountPage;
+import pages.StoreManager;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_01_AddVariableProductAsAVender {
-    MyAccountPage myAccount = new MyAccountPage();
+    StoreManager storeManager=new StoreManager();
+    MyAccountPage myAccount=new MyAccountPage();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Test
     public void addVariableProductTest() throws InterruptedException {
@@ -38,38 +94,38 @@ public class TC_01_AddVariableProductAsAVender {
         js.executeScript("arguments[0].click();", text); //Tiklamayi bu sekilde handle ederiz
 
         //Kullanici Store Manager secenegine tiklar
-        myAccount.storeManagerLink.click();
+        storeManager.storeManagerLink.click();
 
         //Kullanici Products secenegine tiklar
-        myAccount.productsLink.click();
+        storeManager.productsLink.click();
 
         //Kullanici "Add New" butonuna tiklar
-        myAccount.addNewProduct.click();
+        storeManager.addNewProduct.click();
 
         //Kullanici "Variable Product" i secer
-        myAccount.variablePruductDdm.click();
+        storeManager.variablePruductDdm.click();
 
         //Kullanici US14 ve US15 Adimlarini takip ederek yen bir urun ekleme islemlerini yapmalidir
         //myAccount.virtualCheckbox.click();
-        myAccount.productTitleBox.sendKeys("Camping Tent", Keys.ENTER);
+        storeManager.productTitleBox.sendKeys("Camping Tent", Keys.ENTER);
       //  myAccount.priceBox.sendKeys("110" + Keys.ENTER);
        // myAccount.salePriceBox.sendKeys("100" + Keys.ENTER);
-        myAccount.featuredImage.click();
-        myAccount.featuredImageUploadButton.click();
+        storeManager.featuredImage.click();
+        storeManager.featuredImageUploadButton.click();
         Thread.sleep(3000);
-        myAccount.featuredImageSelect.click();
-        myAccount.selectButton.click();
-        myAccount.galleryImage.click();
+        storeManager.featuredImageSelect.click();
+        storeManager.selectButton.click();
+        storeManager.galleryImage.click();
     //    myAccount.mediaLibraryItem.click();
-        myAccount.selectImageForGallery.click();
-        myAccount.addToGalleryButton.click();
-        myAccount.addToGalleryButton.click();
-        myAccount.addCategoryName.sendKeys("Camping Accessories" + Keys.ENTER);
-        Select select = new Select(myAccount.addParentCategory);
+        storeManager.selectImageForGallery.click();
+        storeManager.addToGalleryButton.click();
+        storeManager.addToGalleryButton.click();
+        storeManager.addCategoryName.sendKeys("Camping Accessories" + Keys.ENTER);
+        Select select = new Select(storeManager.addParentCategory);
         select.selectByVisibleText("Sports");
-        myAccount.addBrandLink.click();
-        myAccount.addProductsBrandName.sendKeys("CampEmreProducts",Keys.ENTER);
-        myAccount.addProductsButton.click();
+        storeManager.addBrandLink.click();
+        storeManager.addProductsBrandName.sendKeys("CampEmreProducts",Keys.ENTER);
+        storeManager.addProductsButton.click();
 
         //Kullanici sayfanin altindaki secenekler bolumunden "Attributes" secenegine tiklar
         //Kullanici acilan bolumden "Color" kutusunu aktif hale getirir
