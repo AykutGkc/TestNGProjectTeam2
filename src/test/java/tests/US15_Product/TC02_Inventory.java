@@ -4,7 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import pages.MyAccountRmzn;
+import pages.MyAccountPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -14,7 +14,7 @@ public class TC02_Inventory {
     public void testName() throws InterruptedException {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
-        MyAccountRmzn myAccountRmzn=new MyAccountRmzn();
+        MyAccountPage myAccountRmzn=new MyAccountPage();
         myAccountRmzn.signin.click();//Sign in Tiklandi
         ReusableMethods.waitWithThreadSleep(2);
         myAccountRmzn.username.click();//UsernameK kismi Tiklandi

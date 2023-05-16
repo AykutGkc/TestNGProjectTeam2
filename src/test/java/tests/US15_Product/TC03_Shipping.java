@@ -3,7 +3,7 @@ package tests.US15_Product;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-import pages.MyAccountRmzn;
+import pages.MyAccountPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -14,7 +14,7 @@ public class TC03_Shipping {
     public void shippingProcess() {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
-        MyAccountRmzn myAccountRmzn=new MyAccountRmzn();
+        MyAccountPage myAccountRmzn=new MyAccountPage();
         myAccountRmzn.signin.click();//Sign in Tiklandi
         ReusableMethods.waitWithThreadSleep(2);
         myAccountRmzn.username.click();//UsernameK kismi Tiklandi
