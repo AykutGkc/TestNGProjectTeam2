@@ -1,4 +1,4 @@
-package tests.US_017_AddVariableProductAsAVender;
+package tests.US017_AddVariableProductAsAVender;
 
 public class TC_02_CheckYourProductFromProductsList {
     //Kullanici Kayitli email bilgileri ile Login olur	lecorail242@gmail.com

@@ -1,4 +1,4 @@
-package tests.US_004_AddShippingAddress;
+package tests.US004_AddShippingAddress;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
