@@ -14,7 +14,7 @@ public class TC02_Inventory {
     public void testName() throws InterruptedException {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
-        MyAccountRmzn myAccountRmzn=new MyAccountRmzn();
+        MyAccountPage myAccountRmzn=new MyAccountPage();
         myAccountRmzn.signin.click();//Sign in Tiklandi
         ReusableMethods.waitWithThreadSleep(2);
         myAccountRmzn.username.click();//UsernameK kismi Tiklandi
