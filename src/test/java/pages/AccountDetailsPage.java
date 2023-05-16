@@ -168,11 +168,11 @@ public class AccountDetailsPage {
 
 
 
-   @FindBy(xpath = "//input[@name='account_first_name']") public WebElement FirstNameKutusu;
-   @FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement changeSucces;
-
-
-
+@FindBy(xpath = "//input[@name='account_first_name']") public WebElement FirstNameBox;
+@FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement changeSucces;
+@FindBy(xpath = "//*[@id=\"tinymce\"]/div/pre") public WebElement biographBox;
+@FindBy(xpath = "//*[text()='Password change']") public WebElement PasswordChangeText;
+@FindBy(xpath = "//input[@id='password_current']") public WebElement oldPasswordBox;
 
 
 
