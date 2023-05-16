@@ -8,8 +8,14 @@ import utilities.Driver;
 
 public class MyAccountPage {
     public MyAccountPage() {
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    @FindBy(xpath = "//*[text()='Orders']" ) public WebElement orders;
+    @FindBy(xpath = "//*[text()='My Account']" ) public WebElement myAccount;
+    @FindBy(xpath = "//*[@class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']" ) public WebElement browseProducts;
+    @FindBy(xpath = "//*[@aria-label='Search']" ) public WebElement searchBox;
+    @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']" ) public WebElement addtoCartSimgesi;
 
 
 
@@ -62,13 +68,7 @@ public class MyAccountPage {
 
 
 
-
-
-
-
-
-
-    //Emre soydemir 71-120
+   //Emre soydemir 71-120
     @FindBy(xpath = "//div[@class='account']")    public WebElement accountButton;
     @FindBy(xpath = "//a[@href='signup']")    public WebElement signUpButton;
     @FindBy(xpath = "//a[@href='signin']")    public WebElement accountsignInButton;
@@ -118,6 +118,330 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@id=\"wcfm_products_manage_form_general_expander\"]/div[2]/div[10]/p") public WebElement addBrandLink;
     @FindBy(id = "wcfm_new_product_brand") public WebElement addProductsBrandName;
     @FindBy(xpath = "//*[@id=\"wcfm_products_manage_form_general_expander\"]/div[2]/div[10]/div/button") public WebElement addProductsButton;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//RamazanBey
+ @FindBy(xpath="(//*[text()='Sign In'])[1]") public WebElement signin;
+    @FindBy(xpath="//input[@id='username']") public WebElement username;
+ @FindBy(xpath="//input[@id='password']") public WebElement password;
+ @FindBy(xpath="(//*[text()='Sign In'])[2]")public WebElement signinSubmit;
+@FindBy(xpath = "//*[text()='Sign Out']")public WebElement signout;
+ @FindBy(xpath ="//a[@href='https://pearlymarket.com/store-manager/']") public WebElement storeManeger;
+  @FindBy(xpath = "//a[@href='https://pearlymarket.com/store-manager/products/']") public WebElement product;
+ @FindBy(xpath ="//*[text()='Add New']") public WebElement addNew;
+@FindBy(xpath="//div[@class='wcfm_product_manager_gallery_fields']") public WebElement invontery;
+ @FindBy (xpath="//div[@id='wcfm_products_manage_form_shipping_head']") public WebElement shipping;
+ @FindBy(xpath="//div[@id='wcfm_products_manage_form_attribute_head']") public WebElement attributtes;
+@FindBy(xpath="//div[@id='wcfm_products_manage_form_linked_head']")public WebElement linked;
+ @FindBy(xpath="//div[@id='wcfm_products_manage_form_yoast_head']") public WebElement seo;
+ @FindBy(xpath="//div[@id='wcfm_products_manage_form_toptan-urun-gosterme-ayarlari_head']")public WebElement toptanUrunGosterme;
+@FindBy(xpath="//div[@id='wcfm_products_manage_form_advanced_head']") public WebElement advanced;
+@FindBy(xpath="//input[@id='sku']") public WebElement inventorySku;
+ @FindBy (xpath = "//input[@id='manage_stock']")public WebElement manageStock;
+@FindBy(xpath = "//input[@id='stock_qty']")public WebElement stockQty;
+@FindBy(xpath="//select[@id='backorders']")public WebElement allowBackorders;
+@FindBy(xpath="//select[@id='stock_status']") public WebElement stockstuckddm;
+ @FindBy(xpath="//input[@id='sold_individually']") public WebElement soldindividually;
+ @FindBy(xpath = "//input[@id='weight']") public WebElement weight;
+@FindBy(xpath = "id=\"length\"")public WebElement length;
+@FindBy(xpath = "//input[@id='length']") public WebElement width;
+ @FindBy (xpath = "//input[@id='height']") public WebElement height;
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "(//*[@class='text-uppercase text-center mb-0'])[4]") public WebElement accountDetails;
+    @FindBy(xpath = "//button[@name='save_account_details']") public WebElement saveChangesButton;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Nihat G
+    @FindBy(xpath = "//*[@class='login inline-type']") public WebElement signIn;
+    @FindBy(xpath = "(//input[@id='username'])[1]") public WebElement signInEmail;
+    @FindBy(xpath = "//*[@id='password']") public  WebElement signInPassword;
+    @FindBy(xpath = "//button[@name='login']") public WebElement signInLogin;
+    @FindBy(xpath = "//a[@class='login logout inline-type']")public WebElement signOut;
+    @FindBy(xpath = "//a[text()='Addresses']") public WebElement address;
+    @FindBy(xpath = "//*[text()='Billing address']") public WebElement billingAddress;
+    @FindBy(xpath = "//*[text()='Shipping address']") public WebElement shippingAddress;
+    @FindBy(xpath = "(//*[text()='Add'])[1]") public WebElement addBillingButon;
+    @FindBy(xpath = "(//*[text()='Add'])[2]") public WebElement addShippingButon;
+    @FindBy(xpath = "//input[@id='billing_first_name']") public WebElement firstName;
+    @FindBy(xpath = "//*[@value='carl.tagen@fullangle.org']") public WebElement kayitliEmail;
+    @FindBy(xpath = "(//a[@class='edit btn btn-link btn-primary btn-underline mb-4'])[1]") public WebElement editBillingButonu;
+    @FindBy(xpath = "//*[text()='Edit Your Shipping Address']") public WebElement editShippingButon;
+    @FindBy(xpath = "//a[text()='Logout']") public WebElement logout;
+    @FindBy(xpath = "//button[text()='Save address']") public WebElement saweAddress;
+    @FindBy(xpath = "//select[@id='billing_country']") public  WebElement dropdown;
+    @FindBy(xpath = "//*[@id='billing_address_1']") public WebElement streetAdres;
+    @FindBy(xpath = "(//select)[2]") public WebElement provinceDropdown;
+    @FindBy(xpath = "//input[@id='billing_phone']") public WebElement phone;
+    @FindBy(xpath = "//select[@value='TR']") public WebElement ulke;
+    @FindBy(xpath = "//*[@id='email']") public WebElement fakaSiteEmail;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Nihat G
+
+
+
+//murat
+@FindBy(xpath = "//*[text()='Register']")
+public WebElement Register;
+    @FindBy(xpath = "//*[text()='Sign In']")
+    public WebElement signIn1;
+
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    public WebElement tikla;
+
+    @FindBy(xpath = "//*[@href='https://pearlymarket.com/store-manager/']")
+    public WebElement storeManager;
+
+    @FindBy(xpath = "//*[text()='Products']")
+    public WebElement products;
+    @FindBy(xpath = "//*[text()='Coupons']")// coupons kisminin locateri
+    public WebElement Coupons;
+
+    @FindBy(id = "title")
+    public WebElement title;// kod yazma alani
+    @FindBy(id = "description")
+    public  WebElement descrption;//aciklama yazilan kisim
+    @FindBy(id = "discount_type")
+    public WebElement discount_type; //secim yeri
+    @FindBy(id = "coupon_amount")
+    public WebElement coupon_amount; // miktar girdigimizyer
+    @FindBy(xpath = "//option[text()='Percentage discount']")
+    public WebElement percentageDiscount;
+    @FindBy(id = "expiry_date")
+    public WebElement expiry_date; // tarihin yazildigi yer 2023-12-12
+    @FindBy(xpath = "(//input[@type='submit'])[1]")
+    public WebElement submit;// submit putonu
+
+    @FindBy(id = "product_type")
+    public WebElement pr0Type;
+    // @FindBy(id = "product_type")
+    // public WebElement proTpe;
+
+    @FindBy(xpath = "//select[@class='wcfm-select wcfm_ele wcfm_product_type wcfm_full_ele simple variable external grouped booking']")
+    public WebElement External_AffiliateProduct;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
