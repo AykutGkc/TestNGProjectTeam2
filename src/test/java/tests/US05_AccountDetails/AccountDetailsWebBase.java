@@ -50,5 +50,8 @@ public class AccountDetailsWebBase {
         myAccount.saveChangesButton.click();
         Assert.assertTrue(accountDetailsPage.changeSucces.isDisplayed());
     }
+    
+    int a;
+    int b;
 
 }
