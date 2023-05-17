@@ -27,7 +27,7 @@ public class TC_01_Username_NegatifTest {
         ReusableMethods.waitWithThreadSleep(2);
         homePage.username.sendKeys(userName,Keys.TAB);
         ReusableMethods.waitWithThreadSleep(2);
-       homePage.email.sendKeys("erel@gmail.com",Keys.TAB);
+       homePage.email.sendKeys("erelaet@gmail.com",Keys.TAB);
         ReusableMethods.waitWithThreadSleep(2);
         homePage.password.sendKeys("sfdsdfsaA");
         ReusableMethods.waitWithThreadSleep(2);
