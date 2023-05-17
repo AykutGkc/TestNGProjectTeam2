@@ -118,6 +118,7 @@ public class MyAccountPage {
 
 
 
+
 //RamazanBey
  @FindBy(xpath="(//*[text()='Sign In'])[1]") public WebElement signin;
     @FindBy(xpath="//input[@id='username']") public WebElement username;
