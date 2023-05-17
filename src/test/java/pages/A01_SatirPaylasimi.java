@@ -12,7 +12,7 @@ public class A01_SatirPaylasimi {
     //Nihat GUNES    --->   321-370
     //Murat GULEC    --->   371-421
     //Huri Canbaz    --->   422-472
-    //Sueda Birkin.  --->.  472-522
+    //Sueda Birkin.  --->.  473-522
 
 /*
 
