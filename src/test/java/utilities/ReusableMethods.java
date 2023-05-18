@@ -202,4 +202,35 @@ public class ReusableMethods {
         System.out.println("Attribute Value: = " + attribute_Value);
     }
 
+
+
+
+    public static boolean element_gorunuyor_mu(WebElement webElement){
+
+        return webElement.isDisplayed();
+    }
+
+    public static void bekle(int saniye){
+
+        try {
+            Thread.sleep(1000*saniye);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void gorunene_kadar_bekle(WebElement webElement){
+
+        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+
+
+    }
+
+
+
+
+
+
+
 }

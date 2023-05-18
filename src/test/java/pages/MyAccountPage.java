@@ -320,7 +320,6 @@ public class MyAccountPage {
 
 
 
-
     // Nihat G
     @FindBy(xpath = "//*[@class='login inline-type']") public WebElement signIn;
     @FindBy(xpath = "(//input[@id='username'])[1]") public WebElement signInEmail;
@@ -344,6 +343,15 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@id='billing_phone']") public WebElement phone;
     @FindBy(xpath = "//select[@value='TR']") public WebElement ulke;
     @FindBy(xpath = "//*[@id='email']") public WebElement fakaSiteEmail;
+    @FindBy(xpath = "//a[text()='My Account']") public WebElement myaccount;
+    @FindBy(xpath = "//input[@id='billing_first_name']") public WebElement firstname;
+    @FindBy(xpath = "//input[@id='billing_last_name']") public WebElement jastName;
+    @FindBy(xpath = "(//a[text()='Wishlist'])[1]") public WebElement wishlist;
+    @FindBy(xpath = "//input[@id='shipping_first_name']") public WebElement firstnameShipping;
+    @FindBy(xpath = "//select[@id='shipping_country']") public WebElement ulkeShipping;
+    @FindBy(xpath = "//input[@id='shipping_postcode']") public WebElement postShipping;
+    @FindBy(xpath = "//input[@id='shipping_address_1']") public WebElement StreetAdresShipping;
+    @FindBy(xpath = "//select[@id='shipping_state']") public WebElement provinceShipping;
 
 
 
@@ -360,14 +368,7 @@ public class MyAccountPage {
 
 
 
-
-
-
-
-
-
-
-//Nihat G
+    //Nihat G
 
 
 
