@@ -51,7 +51,6 @@ public class AccountDetailsWebBase {
         Assert.assertTrue(accountDetailsPage.changeSucces.isDisplayed());
     }
     
-    int a;
-    int b;
+
 
 }
