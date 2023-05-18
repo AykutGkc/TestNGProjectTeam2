@@ -105,10 +105,10 @@ import utilities.Driver;
         @FindBy(xpath = "(//input[@class='select2-search__field'])[3]")
         public  WebElement size;
 
-        @FindBy(xpath ="(//ul[@class='select2-selection__rendered'])[4]")
+        @FindBy(xpath ="(//span[@class='select2-selection select2-selection--multiple'])[4]")
         public  WebElement upSells;
 
-        @FindBy(xpath ="(//ul[@class='select2-selection__rendered'])[5]")
+        @FindBy(xpath ="(//span[@class='select2-selection select2-selection--multiple'])[5]")
         public  WebElement croosSells;
 
         @FindBy(xpath = "//*[text()='No matching result found.']")
@@ -116,6 +116,37 @@ import utilities.Driver;
 
         @FindBy(xpath="//li[@class='select2-results__option select2-results__message']")
         public  WebElement  minimun3karaktergirilmeli2;
+
+        @FindBy(xpath="//input[@id='yoast_wpseo_focuskw_text_input']")
+        public WebElement enterafocuskeyword;
+        @FindBy(xpath = "//textarea[@id='yoast_wpseo_metadesc']")
+        public WebElement metadescription;
+
+        @FindBy(xpath = "//select[@id='piecetype']")
+        public  WebElement pieceTypeddm;
+
+        @FindBy (xpath = "//input[@id='unitpercart']")
+        public WebElement unitPerPiece;
+
+
+        @FindBy (xpath = "//input[@id='minorderqtytr'")
+        public WebElement minOrderQuantity;
+
+        @FindBy (xpath="//input[@id='enable_reviews']")
+        public WebElement enable;
+
+        @FindBy (xpath="//input[@id='menu_order']")
+        public WebElement menuOrder;
+
+        @FindBy (xpath="//input[@id='purchase_note']")
+        public WebElement purchaseNote;
+
+
+
+
+
+
+
 
 
 

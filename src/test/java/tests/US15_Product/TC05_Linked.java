@@ -41,6 +41,8 @@ public class TC05_Linked {
         myAccountRmzn.croosSells.sendKeys("ADAA");
         Assert.assertTrue(myAccountRmzn.minimun3karaktergirilmeli2.getText().contains("o matching result found"));
 
+        Driver.closeDriver();
+
 
 
 
