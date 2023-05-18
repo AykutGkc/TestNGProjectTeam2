@@ -2,21 +2,18 @@ package tests.US15_Product;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MyAccountPage;
 import pages.MyAccountRmzn;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC01 {
-
+public class TC08_Advanced {
     @Test
-    public void test1() {
+    public void Advanced() {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
-        MyAccountPage myAccountRmzn=new MyAccountPage();
+        MyAccountRmzn myAccountRmzn=new MyAccountRmzn();
         myAccountRmzn.signin.click();//Sign in Tiklandi
         ReusableMethods.waitWithThreadSleep(2);
         myAccountRmzn.username.click();//UsernameK kismi Tiklandi
@@ -34,30 +31,11 @@ public class TC01 {
         Actions actions=new Actions(Driver.getDriver());//Action Objesi tiklandi
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();//Sayfanin asagina gidilir
         actions.sendKeys(Keys.ARROW_DOWN).perform();////Sayfanin asagina gidilir
-        Assert.assertTrue(myAccountRmzn.invontery.isDisplayed());//Inventory gorulur oldugu dogrulanir.
-        Assert.assertTrue(myAccountRmzn.shipping.isDisplayed());//Shhipping bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.attributtes.isDisplayed());//Attribuutes bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.linked.isDisplayed());//Linked bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.seo.isDisplayed());//Seo bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.toptanUrunGosterme.isDisplayed());//Toptan Urun Gosterme bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.advanced.isDisplayed());//Advanced bolumun gorulur oldugu dogrulanir
+        ReusableMethods.waitWithThreadSleep(2);
 
-        System.out.println("TC01 BASARILI ILE SONUCLANDI");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        myAccountRmzn.advanced.click();
+        myAccountRmzn.enable.click();
+        myAccountRmzn.menuOrder.sendKeys("Test"+Keys.ENTER);
+        myAccountRmzn.purchaseNote.sendKeys("Testimiz Basarili ile Sonuclandi ");
     }
 }
