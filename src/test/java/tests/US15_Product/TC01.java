@@ -5,7 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MyAccountPage;
-import pages.MyAccountRmzn;
+import pages.VendorProduct;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -16,31 +16,31 @@ public class TC01 {
     public void test1() {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
-        MyAccountPage myAccountRmzn=new MyAccountPage();
-        myAccountRmzn.signin.click();//Sign in Tiklandi
+        VendorProduct vendorProduct=new VendorProduct();
+        vendorProduct.signin.click();//Sign in Tiklandi
         ReusableMethods.waitWithThreadSleep(2);
-        myAccountRmzn.username.click();//UsernameK kismi Tiklandi
+        vendorProduct.username.click();//UsernameK kismi Tiklandi
         ReusableMethods.waitWithThreadSleep(2);
-        myAccountRmzn.username.sendKeys(ConfigReader.getProperty("usernameOrEmail"));//Email girildi
+        vendorProduct.username.sendKeys(ConfigReader.getProperty("usernameOrEmail"));//Email girildi
         ReusableMethods.waitWithThreadSleep(2);
-        myAccountRmzn.password.click();//Password tiklandi
-        myAccountRmzn.password.sendKeys(ConfigReader.getProperty("password"));//Password girildi
+        vendorProduct.password.click();//Password tiklandi
+        vendorProduct.password.sendKeys(ConfigReader.getProperty("password"));//Password girildi
         ReusableMethods.waitWithThreadSleep(2);
-        myAccountRmzn.signinSubmit.click();//Sing in tiklandi
-        myAccountRmzn.signout.click();//Signout tiklandi
-        myAccountRmzn.storeManeger.click();//StoreManager tiklanir
-        myAccountRmzn.product.click();//Product tiklanir
-        myAccountRmzn.addNew.click();//Addnew tiklanir
+        vendorProduct.signinSubmit.click();//Sing in tiklandi
+        vendorProduct.signout.click();//Signout tiklandi
+        vendorProduct.storeManeger.click();//StoreManager tiklanir
+        vendorProduct.product.click();//Product tiklanir
+        vendorProduct.addNew.click();//Addnew tiklanir
         Actions actions=new Actions(Driver.getDriver());//Action Objesi tiklandi
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();//Sayfanin asagina gidilir
         actions.sendKeys(Keys.ARROW_DOWN).perform();////Sayfanin asagina gidilir
-        Assert.assertTrue(myAccountRmzn.invontery.isDisplayed());//Inventory gorulur oldugu dogrulanir.
-        Assert.assertTrue(myAccountRmzn.shipping.isDisplayed());//Shhipping bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.attributtes.isDisplayed());//Attribuutes bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.linked.isDisplayed());//Linked bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.seo.isDisplayed());//Seo bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.toptanUrunGosterme.isDisplayed());//Toptan Urun Gosterme bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(myAccountRmzn.advanced.isDisplayed());//Advanced bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(vendorProduct.invontery.isDisplayed());//Inventory gorulur oldugu dogrulanir.
+        Assert.assertTrue(vendorProduct.shipping.isDisplayed());//Shhipping bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(vendorProduct.attributtes.isDisplayed());//Attribuutes bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(vendorProduct.linked.isDisplayed());//Linked bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(vendorProduct.seo.isDisplayed());//Seo bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(vendorProduct.toptanUrunGosterme.isDisplayed());//Toptan Urun Gosterme bolumun gorulur oldugu dogrulanir
+        Assert.assertTrue(vendorProduct.advanced.isDisplayed());//Advanced bolumun gorulur oldugu dogrulanir
 
         System.out.println("TC01 BASARILI ILE SONUCLANDI");
 
