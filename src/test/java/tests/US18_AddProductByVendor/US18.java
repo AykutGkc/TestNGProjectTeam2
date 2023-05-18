@@ -1,8 +1,7 @@
-package tests.US18;
+package tests.US18_AddProductByVendor;
 
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
-import pages.HomePage;
 
 import pages.MyAccountPage;
 import utilities.ConfigReader;
