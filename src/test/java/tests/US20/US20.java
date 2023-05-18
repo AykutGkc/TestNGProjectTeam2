@@ -1,6 +1,7 @@
 package tests.US20;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import pages.MyAccountPage;
@@ -19,6 +20,9 @@ public class US20 {
         myAccountPage.tikla.click();
         myAccountPage.signOut.click();
         myAccountPage.storeManager.click();
+        Actions actions=new Actions(Driver.getDriver());//Action Objesi tiklandi
+
+        actions.sendKeys(Keys.ARROW_DOWN).perform();////Sayfanin asagina gidilir
         myAccountPage.Coupons.click();
         myAccountPage.addNew.click();
         myAccountPage.title.sendKeys("1234");
