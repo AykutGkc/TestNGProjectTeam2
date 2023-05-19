@@ -1,19 +1,22 @@
 package tests.US12_VendorBillingAddress;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-import pages.MyAccountPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
 
-public class US12_VendorBillingAddress {
+import org.openqa.selenium.Keys;
+        import org.openqa.selenium.support.ui.Select;
+        import org.testng.Assert;
+        import org.testng.annotations.Test;
+        import pages.MyAccountPage;
+        import utilities.ConfigReader;
+        import utilities.Driver;
+        import utilities.ReusableMethods;
+
+public class TC_02_VendorBillingAddressPositivTest {
 
     @Test
     public void billingAddressTest() throws InterruptedException {
+
         Driver.getDriver().get(ConfigReader.getProperty("site_Url"));
+
         MyAccountPage myAccountPage = new MyAccountPage();
 
         myAccountPage.signIn.click();
@@ -24,7 +27,7 @@ public class US12_VendorBillingAddress {
         ReusableMethods.scrollEnd();
         Thread.sleep(3000);
 
-        myAccountPage.myAccount.click();
+        myAccountPage.myaccount.click();
         Thread.sleep(2000);
         myAccountPage.address.click();
         Thread.sleep(4);
@@ -75,13 +78,14 @@ public class US12_VendorBillingAddress {
         myAccountPage.saweAddress.click();
         Thread.sleep(2000);
 
-        String alert = Driver.getDriver().switchTo().alert().getText();
-        System.out.println(alert);
+        String alert = myAccountPage.savedshippingAddressAllert.getText();
+        Assert.assertTrue(alert.contains("Address changed successfully."));
 
-        Thread.sleep(3000);
+        myAccountPage.signOut.click();
+        ReusableMethods.scroll(myAccountPage.logout);
+        Thread.sleep(2000);
+        myAccountPage.logout.click();
 
-
-//        String alert = myAccountPage.savedshippingAddressAllert.getText();
-//        Assert.assertTrue(alert.contains("Address changed successfully."));
+        Driver.closeDriver();
     }
 }
