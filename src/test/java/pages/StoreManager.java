@@ -191,7 +191,7 @@ public class StoreManager {
     @FindBy (xpath = "//*[text()='Shop only']") public WebElement ShopOnlyddm;
     @FindBy (xpath = "//*[text()='Search results only']") public WebElement SearchResultsOnlyddm;
     @FindBy (xpath = "//*[text()='Hidden']") public WebElement Hiddenddm;
-
+    @FindBy(xpath = "//*[@id=\"menu-item-browse\"]") public WebElement mediaLibraryItem
 
 
 
