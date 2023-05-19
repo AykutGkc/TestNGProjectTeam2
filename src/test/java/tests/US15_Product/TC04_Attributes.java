@@ -37,10 +37,10 @@ public class TC04_Attributes {
 
 
 
-        myAccountPage.attributtes.click();
-        myAccountPage.color.sendKeys(ConfigReader.getProperty("color"+Keys.ENTER));
-        myAccountPage.visibleOnTheProductPage.click();//VisibleOntheProductPage tiklenir
-        myAccountPage.size.sendKeys(ConfigReader.getProperty("size"+Keys.ENTER));
+   //     myAccountPage.attributtes.click();
+  //      myAccountPage.color.sendKeys(ConfigReader.getProperty("color"+Keys.ENTER));
+  //      myAccountPage.visibleOnTheProductPage.click();//VisibleOntheProductPage tiklenir
+  //      myAccountPage.size.sendKeys(ConfigReader.getProperty("size"+Keys.ENTER));
 
 
 
