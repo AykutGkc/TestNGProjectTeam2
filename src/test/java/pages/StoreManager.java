@@ -93,4 +93,109 @@ public class StoreManager {
     @FindBy(xpath = "//*[@id=\"wcfm_products_manage_form_general_expander\"]/div[2]/div[10]/div/button") public WebElement addProductsButton;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy (id = "product_type") public WebElement ddmMenüProducktType;
+    @FindBy (id = "featured_img_display") public WebElement imageAddFeld;
+    @FindBy (xpath = "(//div[@class='thumbnail'])[1]") public WebElement chooseImage;
+    @FindBy (xpath = "//button[@class='button media-button button-primary button-large media-button-select']") public WebElement selectImageButton;
+    @FindBy (id= "featured_img_remove_button") public WebElement imgRemoveButton;
+    @FindBy (xpath = "//*[text()='Shipping']") public WebElement shippingButton;
+    @FindBy (id = "//input[@id='weight']") public WebElement weightBox;
+    @FindBy (id = "//input[@id='length']") public WebElement lengthBox;
+    @FindBy (id = "//input[@id='width']") public WebElement widthBox;
+    @FindBy (id = "//input[@id='height']") public WebElement heightBox;
+    @FindBy (xpath = "//input[@class='wcfm-checkbox checklist_type_product_cat wcfm_validation_success']") public WebElement allCatogoriesCheckBox;
+    @FindBy (xpath = "(//span[@class='required'])[1]") public WebElement categoriesText;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
