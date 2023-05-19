@@ -145,6 +145,9 @@ public class MyAccountPage {
 @FindBy(xpath = "id=\"length\"")public WebElement length;
 @FindBy(xpath = "//input[@id='length']") public WebElement width;
  @FindBy (xpath = "//input[@id='height']") public WebElement height;
+    @FindBy(xpath = "(//input[@class='select2-search__field'])[2]") public WebElement color;
+    @FindBy(xpath = "//input[@id='attributes_is_visible_1']")  public WebElement visibleOnTheProductPage;
+    @FindBy(xpath = "(//input[@class='select2-search__field'])[3]") public  WebElement size;
 
 
 
