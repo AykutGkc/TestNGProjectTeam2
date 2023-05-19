@@ -1,8 +1,6 @@
-package tests.US06_SesrchBox;
+package tests.US06_US07SesrchBox;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Compare;
