@@ -356,16 +356,6 @@ public class MyAccountPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
     //Nihat G
 
 

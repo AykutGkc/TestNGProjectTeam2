@@ -19,9 +19,9 @@ import java.util.List;
 
 public class ReusableMethods {
 
-    protected static ExtentReports extentReports;
-    protected static ExtentHtmlReporter extentHtmlReporter;
-    protected static ExtentTest extentTest;
+    public static ExtentReports extentReports;
+    public static ExtentHtmlReporter extentHtmlReporter;
+    public static ExtentTest extentTest;
 
 
     //HARD WAIT METHOD
@@ -200,6 +200,23 @@ public class ReusableMethods {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
+    }
+
+    //Extend Report Parametreli
+    public static ExtentTest extentReportParametreli(String Tester, String TestinAdi) {
+        extentReports = new ExtentReports();
+        String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu = "TestOutput/reports/extentReport_" + tarih + ".html";
+        extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
+        extentReports.attachReporter(extentHtmlReporter);
+
+        //Raporda gözükmesini istediğimiz bilgiler için
+        extentReports.setSystemInfo("Browser", "Chrome");
+        extentReports.setSystemInfo("Tester", Tester);
+        extentHtmlReporter.config().setDocumentTitle("Extent Report");
+
+        extentTest = extentReports.createTest(TestinAdi);
+        return extentTest;
     }
 
 }
