@@ -8,6 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.StoreManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -203,9 +204,20 @@ public class ReusableMethods {
     }
 
 
+    //Attributes add size
+    static StoreManager storeManager = new StoreManager();
+
+    public static void addSize(String size) {
+        click(storeManager.addSizeButton);
+        ReusableMethods.alertprompt(size);
+        ReusableMethods.alertAccept();
+    }
 
 
-    public static boolean element_gorunuyor_mu(WebElement webElement){
+
+
+
+   public static boolean element_gorunuyor_mu(WebElement webElement){
 
         return webElement.isDisplayed();
     }
@@ -226,6 +238,7 @@ public class ReusableMethods {
 
 
     }
+
 
 
 
