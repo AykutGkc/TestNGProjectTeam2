@@ -1,4 +1,4 @@
-package tests;
+package tests.US06_SesrchBox;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
