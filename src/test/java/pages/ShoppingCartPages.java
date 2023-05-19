@@ -16,4 +16,6 @@ public class ShoppingCartPages {
     @FindBy(xpath = "//*[@class='woocommerce-checkout-payment']" ) public WebElement paymentMethods;
     @FindBy(xpath = "(//*[@class='input-radio'])[2]" ) public WebElement payatthedoor;
     @FindBy(xpath = "//*[@name='woocommerce_checkout_place_order']" ) public WebElement placeorder;
+
+    @FindBy(xpath = "//*[@id='quantity_646742ad335a6']" ) public WebElement artırmaazaltma;
 }

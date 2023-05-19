@@ -2,7 +2,6 @@ package tests.US15_Product;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MyAccountPage;
 import pages.VendorProduct;
@@ -10,12 +9,11 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC01 {
-
+public class TC04_Attributes {
     @Test
-    public void test1() {
+    public void Attributes() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
+        Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidilir
         VendorProduct vendorProduct=new VendorProduct();
         vendorProduct.signin.click();//Sign in Tiklandi
         ReusableMethods.waitWithThreadSleep(2);
@@ -31,28 +29,22 @@ public class TC01 {
         vendorProduct.storeManeger.click();//StoreManager tiklanir
         vendorProduct.product.click();//Product tiklanir
         vendorProduct.addNew.click();//Addnew tiklanir
-        Actions actions=new Actions(Driver.getDriver());//Action Objesi tiklandi
+        Actions actions=new Actions(Driver.getDriver());//Action Objesi tiklanir
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();//Sayfanin asagina gidilir
         actions.sendKeys(Keys.ARROW_DOWN).perform();////Sayfanin asagina gidilir
-        Assert.assertTrue(vendorProduct.invontery.isDisplayed());//Inventory gorulur oldugu dogrulanir.
-        Assert.assertTrue(vendorProduct.shipping.isDisplayed());//Shhipping bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(vendorProduct.attributtes.isDisplayed());//Attribuutes bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(vendorProduct.linked.isDisplayed());//Linked bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(vendorProduct.seo.isDisplayed());//Seo bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(vendorProduct.toptanUrunGosterme.isDisplayed());//Toptan Urun Gosterme bolumun gorulur oldugu dogrulanir
-        Assert.assertTrue(vendorProduct.advanced.isDisplayed());//Advanced bolumun gorulur oldugu dogrulanir
-
-        System.out.println("TC01 BASARILI ILE SONUCLANDI");
 
 
 
 
+        vendorProduct.attributtes.click();
+        vendorProduct.color.sendKeys(ConfigReader.getProperty("color"+Keys.ENTER));
+        vendorProduct.visibleOnTheProductPage.click();//VisibleOntheProductPage tiklenir
+        vendorProduct.size.sendKeys(ConfigReader.getProperty("size"+Keys.ENTER));
 
-
-
-
-
-
+   //     myAccountPage.attributtes.click();
+  //      myAccountPage.color.sendKeys(ConfigReader.getProperty("color"+Keys.ENTER));
+  //      myAccountPage.visibleOnTheProductPage.click();//VisibleOntheProductPage tiklenir
+  //      myAccountPage.size.sendKeys(ConfigReader.getProperty("size"+Keys.ENTER));
 
 
 
@@ -61,3 +53,4 @@ public class TC01 {
 
     }
 }
+

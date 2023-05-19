@@ -17,6 +17,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@aria-label='Search']" ) public WebElement searchBox;
     @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']" ) public WebElement addtoCartSimgesi;
 
+    @FindBy(xpath = "//*[text()='Sign Out']" ) public WebElement signoutdogrulama;
 
 
 
@@ -118,32 +119,37 @@ public class MyAccountPage {
 
 
 
+
 //RamazanBey
- @FindBy(xpath="(//*[text()='Sign In'])[1]") public WebElement signin;
+
+@FindBy(xpath="(//*[text()='Sign In'])[1]") public WebElement signin;
     @FindBy(xpath="//input[@id='username']") public WebElement username;
- @FindBy(xpath="//input[@id='password']") public WebElement password;
- @FindBy(xpath="(//*[text()='Sign In'])[2]")public WebElement signinSubmit;
-@FindBy(xpath = "//*[text()='Sign Out']")public WebElement signout;
- @FindBy(xpath ="//a[@href='https://pearlymarket.com/store-manager/']") public WebElement storeManeger;
-  @FindBy(xpath = "//a[@href='https://pearlymarket.com/store-manager/products/']") public WebElement product;
- @FindBy(xpath ="//*[text()='Add New']") public WebElement addNew;
-@FindBy(xpath="//div[@class='wcfm_product_manager_gallery_fields']") public WebElement invontery;
- @FindBy (xpath="//div[@id='wcfm_products_manage_form_shipping_head']") public WebElement shipping;
- @FindBy(xpath="//div[@id='wcfm_products_manage_form_attribute_head']") public WebElement attributtes;
-@FindBy(xpath="//div[@id='wcfm_products_manage_form_linked_head']")public WebElement linked;
- @FindBy(xpath="//div[@id='wcfm_products_manage_form_yoast_head']") public WebElement seo;
- @FindBy(xpath="//div[@id='wcfm_products_manage_form_toptan-urun-gosterme-ayarlari_head']")public WebElement toptanUrunGosterme;
-@FindBy(xpath="//div[@id='wcfm_products_manage_form_advanced_head']") public WebElement advanced;
-@FindBy(xpath="//input[@id='sku']") public WebElement inventorySku;
- @FindBy (xpath = "//input[@id='manage_stock']")public WebElement manageStock;
-@FindBy(xpath = "//input[@id='stock_qty']")public WebElement stockQty;
-@FindBy(xpath="//select[@id='backorders']")public WebElement allowBackorders;
-@FindBy(xpath="//select[@id='stock_status']") public WebElement stockstuckddm;
- @FindBy(xpath="//input[@id='sold_individually']") public WebElement soldindividually;
+    @FindBy(xpath="//input[@id='password']") public WebElement password;
+    @FindBy(xpath="(//*[text()='Sign In'])[2]")public WebElement signinSubmit;
+    @FindBy(xpath = "//*[text()='Sign Out']")public WebElement signout;
+    @FindBy(xpath ="//a[@href='https://pearlymarket.com/store-manager/']") public WebElement storeManeger;
+    @FindBy(xpath = "//a[@href='https://pearlymarket.com/store-manager/products/']") public WebElement product;
+    @FindBy(xpath ="//*[text()='Add New']") public WebElement addNew;
+    @FindBy(xpath="//div[@class='wcfm_product_manager_gallery_fields']") public WebElement invontery;
+    @FindBy (xpath="//div[@id='wcfm_products_manage_form_shipping_head']") public WebElement shipping;
+    @FindBy(xpath="//div[@id='wcfm_products_manage_form_attribute_head']") public WebElement attributtes;
+    @FindBy(xpath="//div[@id='wcfm_products_manage_form_linked_head']")public WebElement linked;
+    @FindBy(xpath="//div[@id='wcfm_products_manage_form_yoast_head']") public WebElement seo;
+    @FindBy(xpath="//div[@id='wcfm_products_manage_form_toptan-urun-gosterme-ayarlari_head']")public WebElement toptanUrunGosterme;
+    @FindBy(xpath="//div[@id='wcfm_products_manage_form_advanced_head']") public WebElement advanced;
+    @FindBy(xpath="//input[@id='sku']") public WebElement inventorySku;
+    @FindBy (xpath = "//input[@id='manage_stock']")public WebElement manageStock;
+    @FindBy(xpath = "//input[@id='stock_qty']")public WebElement stockQty;
+    @FindBy(xpath="//select[@id='backorders']")public WebElement allowBackorders;
+    @FindBy(xpath="//select[@id='stock_status']") public WebElement stockstuckddm;
+    @FindBy(xpath="//input[@id='sold_individually']") public WebElement soldindividually;
  @FindBy(xpath = "//input[@id='weight']") public WebElement weight;
 @FindBy(xpath = "id=\"length\"")public WebElement length;
 @FindBy(xpath = "//input[@id='length']") public WebElement width;
  @FindBy (xpath = "//input[@id='height']") public WebElement height;
+    @FindBy(xpath = "(//input[@class='select2-search__field'])[2]") public WebElement color;
+    @FindBy(xpath = "//input[@id='attributes_is_visible_1']")  public WebElement visibleOnTheProductPage;
+    @FindBy(xpath = "(//input[@class='select2-search__field'])[3]") public  WebElement size;
 
 
 
@@ -155,10 +161,12 @@ public class MyAccountPage {
 
 
 
-    
-    
-    
-    
+
+
+
+
+
+
 
 
 
@@ -170,7 +178,6 @@ public class MyAccountPage {
 
     @FindBy(xpath = "(//*[@class='text-uppercase text-center mb-0'])[4]") public WebElement accountDetails;
     @FindBy(xpath = "//button[@name='save_account_details']") public WebElement saveChangesButton;
-
 
 
 
@@ -341,30 +348,22 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[@id='billing_phone']") public WebElement phone;
     @FindBy(xpath = "//select[@value='TR']") public WebElement ulke;
     @FindBy(xpath = "//*[@id='email']") public WebElement fakaSiteEmail;
+    @FindBy(xpath = "//a[text()='My Account']") public WebElement myaccount;
+    @FindBy(xpath = "//input[@id='billing_first_name']") public WebElement firstname;
+    @FindBy(xpath = "//input[@id='billing_last_name']") public WebElement jastName;
+    @FindBy(xpath = "(//a[text()='Wishlist'])[1]") public WebElement wishlist;
+    @FindBy(xpath = "//input[@id='shipping_first_name']") public WebElement firstnameShipping;
+    @FindBy(xpath = "//select[@id='shipping_country']") public WebElement ulkeShipping;
+    @FindBy(xpath = "//input[@id='shipping_postcode']") public WebElement postShipping;
+    @FindBy(xpath = "//input[@id='shipping_address_1']") public WebElement StreetAdresShipping;
+    @FindBy(xpath = "//select[@id='shipping_state']") public WebElement provinceShipping;
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Nihat G
+    //Nihat G
 
 
 

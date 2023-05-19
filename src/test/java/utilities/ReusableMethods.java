@@ -8,6 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.StoreManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,9 +20,9 @@ import java.util.List;
 
 public class ReusableMethods {
 
-    protected static ExtentReports extentReports;
-    protected static ExtentHtmlReporter extentHtmlReporter;
-    protected static ExtentTest extentTest;
+    public static ExtentReports extentReports;
+    public static ExtentHtmlReporter extentHtmlReporter;
+    public static ExtentTest extentTest;
 
 
     //HARD WAIT METHOD
@@ -201,5 +202,67 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
+
+    //Extend Report Parametreli
+    public static ExtentTest extentReportParametreli(String Tester, String TestinAdi) {
+        extentReports = new ExtentReports();
+        String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu = "TestOutput/reports/extentReport_" + tarih + ".html";
+        extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
+        extentReports.attachReporter(extentHtmlReporter);
+
+        //Raporda gözükmesini istediğimiz bilgiler için
+        extentReports.setSystemInfo("Browser", "Chrome");
+        extentReports.setSystemInfo("Tester", Tester);
+        extentHtmlReporter.config().setDocumentTitle("Extent Report");
+
+        extentTest = extentReports.createTest(TestinAdi);
+        return extentTest;
+    }
+
+
+    //Attributes add size
+    static StoreManager storeManager = new StoreManager();
+
+    public static void addSize(String size) {
+        click(storeManager.addSizeButton);
+        ReusableMethods.alertprompt(size);
+        ReusableMethods.alertAccept();
+    }
+
+
+
+
+
+   public static boolean element_gorunuyor_mu(WebElement webElement){
+
+        return webElement.isDisplayed();
+    }
+
+    public static void bekle(int saniye){
+
+        try {
+            Thread.sleep(1000*saniye);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void gorunene_kadar_bekle(WebElement webElement){
+
+        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+
+
+    }
+
+
+
+
+
+
+
+
 
 }

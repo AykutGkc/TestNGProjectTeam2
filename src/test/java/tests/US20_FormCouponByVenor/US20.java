@@ -1,4 +1,4 @@
-package tests.US20;
+package tests.US20_FormCouponByVenor;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;

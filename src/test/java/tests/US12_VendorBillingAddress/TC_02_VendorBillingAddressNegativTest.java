@@ -1,5 +1,4 @@
 package tests.US12_VendorBillingAddress;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -9,10 +8,9 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US12_VendorBillingAddress {
-
+public class TC_02_VendorBillingAddressNegativTest {
     @Test
-    public void billingAddressTest() throws InterruptedException {
+    public void negativTest() throws InterruptedException {
         Driver.getDriver().get(ConfigReader.getProperty("site_Url"));
         MyAccountPage myAccountPage = new MyAccountPage();
 
@@ -24,7 +22,7 @@ public class US12_VendorBillingAddress {
         ReusableMethods.scrollEnd();
         Thread.sleep(3000);
 
-        myAccountPage.myAccount.click();
+        myAccountPage.myaccount.click();
         Thread.sleep(2000);
         myAccountPage.address.click();
         Thread.sleep(4);
@@ -42,8 +40,8 @@ public class US12_VendorBillingAddress {
 
         myAccountPage.firstName.click();
         myAccountPage.firstName.clear();
-        myAccountPage.firstName.sendKeys(ConfigReader.getProperty("firstname"),
-                Keys.TAB, ConfigReader.getProperty("lastname"),
+        myAccountPage.firstName.sendKeys(ConfigReader.getProperty("firstnameFail"),
+                Keys.TAB, ConfigReader.getProperty("lastnameFail"),
                 Keys.TAB, ConfigReader.getProperty("company"));
         Thread.sleep(3000);
 
@@ -56,8 +54,8 @@ public class US12_VendorBillingAddress {
         Thread.sleep(2000);
         myAccountPage.streetAdres.sendKeys(ConfigReader.getProperty("streetAddress"),
                 Keys.TAB, ConfigReader.getProperty("apartment"),
-                Keys.TAB, ConfigReader.getProperty("postcode"),
-                Keys.TAB, ConfigReader.getProperty("city"));
+                Keys.TAB, ConfigReader.getProperty("postcodeFail"),
+                Keys.TAB, ConfigReader.getProperty("cityFail"));
 
         Thread.sleep(2000);
 
@@ -75,13 +73,15 @@ public class US12_VendorBillingAddress {
         myAccountPage.saweAddress.click();
         Thread.sleep(2000);
 
-        String alert = Driver.getDriver().switchTo().alert().getText();
-        System.out.println(alert);
-
+        String alert = myAccountPage.savedshippingAddressAllert.getText();
+        Assert.assertTrue(alert.contains("Address changed successfully."));
         Thread.sleep(3000);
 
+        myAccountPage.signOut.click();
+        ReusableMethods.scroll(myAccountPage.logout);
+        Thread.sleep(2000);
+        myAccountPage.logout.click();
 
-//        String alert = myAccountPage.savedshippingAddressAllert.getText();
-//        Assert.assertTrue(alert.contains("Address changed successfully."));
+        Driver.closeDriver();
     }
 }

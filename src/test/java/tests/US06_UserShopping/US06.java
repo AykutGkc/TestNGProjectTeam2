@@ -1,4 +1,6 @@
-package tests;
+
+package tests.US06_UserShopping;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

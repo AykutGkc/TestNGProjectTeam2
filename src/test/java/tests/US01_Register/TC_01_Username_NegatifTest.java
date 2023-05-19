@@ -1,14 +1,17 @@
 package tests.US01_Register;
 
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import pages.MyAccountPage;
 import utilities.*;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 public class TC_01_Username_NegatifTest {
+    MyAccountPage myAcPa=new MyAccountPage();
 
     @Test
     public void test1() throws FileNotFoundException {
@@ -27,7 +30,7 @@ public class TC_01_Username_NegatifTest {
         ReusableMethods.waitWithThreadSleep(2);
         homePage.username.sendKeys(userName,Keys.TAB);
         ReusableMethods.waitWithThreadSleep(2);
-       homePage.email.sendKeys("erel@gmail.com",Keys.TAB);
+       homePage.email.sendKeys("erelaet@gmail.com",Keys.TAB);
         ReusableMethods.waitWithThreadSleep(2);
         homePage.password.sendKeys("sfdsdfsaA");
         ReusableMethods.waitWithThreadSleep(2);
@@ -35,7 +38,9 @@ public class TC_01_Username_NegatifTest {
         ReusableMethods.waitWithThreadSleep(2);
         homePage.signupButon.click();
         ReusableMethods.waitWithThreadSleep(4);
+        Assert.assertTrue(homePage.signupButon.isEnabled());
 
-        Driver.closeDriver();
+
+        Driver.quitDriver();
     }
 }

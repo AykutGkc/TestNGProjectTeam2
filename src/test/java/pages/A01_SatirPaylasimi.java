@@ -11,6 +11,8 @@ public class A01_SatirPaylasimi {
     //Hamit YILMAZ   --->   271-320
     //Nihat GUNES    --->   321-370
     //Murat GULEC    --->   371-421
+    //Huri Canbaz    --->   422-472
+    //Sueda Birkin.  --->.  473-522
 
 /*
 
