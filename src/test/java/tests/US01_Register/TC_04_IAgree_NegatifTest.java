@@ -30,7 +30,7 @@ public class TC_04_IAgree_NegatifTest {
         ReusableMethods.waitWithThreadSleep(4);
         Assert.assertFalse(homePage.signupButon.isSelected());
         ReusableMethods.waitWithThreadSleep(4);
-
-        Driver.closeDriver();
+        Assert.assertTrue(homePage.signupButon.isEnabled());
+        Driver.quitDriver();
 }
 }

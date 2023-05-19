@@ -17,6 +17,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@aria-label='Search']" ) public WebElement searchBox;
     @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']" ) public WebElement addtoCartSimgesi;
 
+    @FindBy(xpath = "//*[text()='Sign Out']" ) public WebElement signoutdogrulama;
 
 
 
@@ -145,6 +146,9 @@ public class MyAccountPage {
 @FindBy(xpath = "id=\"length\"")public WebElement length;
 @FindBy(xpath = "//input[@id='length']") public WebElement width;
  @FindBy (xpath = "//input[@id='height']") public WebElement height;
+    @FindBy(xpath = "(//input[@class='select2-search__field'])[2]") public WebElement color;
+    @FindBy(xpath = "//input[@id='attributes_is_visible_1']")  public WebElement visibleOnTheProductPage;
+    @FindBy(xpath = "(//input[@class='select2-search__field'])[3]") public  WebElement size;
 
 
 

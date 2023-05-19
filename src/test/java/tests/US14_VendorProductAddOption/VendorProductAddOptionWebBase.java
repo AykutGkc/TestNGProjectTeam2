@@ -15,10 +15,10 @@ public class VendorProductAddOptionWebBase {
         ReusableMethods.waitWithThreadSleep(2);
         myAccountPage.username.click();//UsernameK kismi Tiklandi
         ReusableMethods.waitWithThreadSleep(2);
-        myAccountPage.username.sendKeys(ConfigReader.getProperty("usernameOrEmail"));//Email girildi
+        myAccountPage.username.sendKeys(ConfigReader.getProperty("VendorE_Mail"));//Email girildi
         ReusableMethods.waitWithThreadSleep(2);
         myAccountPage.password.click();//Password tiklandi
-        myAccountPage.password.sendKeys(ConfigReader.getProperty("password"));//Password girildi
+        myAccountPage.password.sendKeys(ConfigReader.getProperty("VendorPassword"));//Password girildi
         ReusableMethods.waitWithThreadSleep(2);
         myAccountPage.signinSubmit.click();//Sing in tiklandi
         myAccountPage.signout.click();//Signout tiklandi
