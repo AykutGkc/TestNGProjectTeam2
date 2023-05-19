@@ -92,5 +92,6 @@ public class StoreManager {
     public WebElement addAttributeName;
     @FindBy(id = "wcfm_products_simple_submit_button")
     public WebElement submitButton;
+    @FindBy(xpath = "//*[@id=\"wcfm-products\"]/tbody/tr[1]/td[3]/a") public WebElement teaPotItem;
 
 }
