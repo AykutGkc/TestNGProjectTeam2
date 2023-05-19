@@ -381,7 +381,7 @@ public WebElement Register;
 
     @FindBy(xpath = "//*[text()='Products']")
     public WebElement products;
-    @FindBy(xpath = "//*[text()='Coupons']")// coupons kisminin locateri
+    @FindBy(xpath = "(//span[@class='text'])[6]")// coupons kisminin locateri
     public WebElement Coupons;
 
     @FindBy(id = "title")
