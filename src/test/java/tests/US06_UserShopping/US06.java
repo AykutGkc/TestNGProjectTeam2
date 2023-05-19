@@ -1,8 +1,6 @@
-<<<<<<<< HEAD:src/test/java/tests/US06_US07SesrchBox/US06.java
-package tests.US06_US07SesrchBox;
-========
+
 package tests.US06_UserShopping;
->>>>>>>> master:src/test/java/tests/US06_UserShopping/US06.java
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
