@@ -1,6 +1,7 @@
 package tests.US01_Register;
 
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import utilities.*;
@@ -35,7 +36,8 @@ public class TC_02_Email_NegatifTest {
         homePage.signupButon.click();
         ReusableMethods.waitWithThreadSleep(4);
 
-        Driver.closeDriver();
+        Assert.assertTrue(homePage.signupButon.isEnabled());
+       Driver.quitDriver();
 
 
     }
