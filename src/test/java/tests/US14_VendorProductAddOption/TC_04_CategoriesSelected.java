@@ -8,6 +8,7 @@ import pages.StoreManager;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TC_04_CategoriesSelected extends VendorProductAddOptionWebBase{
@@ -17,7 +18,12 @@ public class TC_04_CategoriesSelected extends VendorProductAddOptionWebBase{
         storeManager=new StoreManager();
         ReusableMethods.scroll(storeManager.categoriesText);
 
-        List<WebElement> checkboxes = Driver.getDriver().findElements(By.id("product_cats_checklist"));
+        List<String> abc=new ArrayList<>();
+        List<WebElement> checkboxes = Driver.getDriver().findElements(By.xpath("//input[@class='wcfm-checkbox checklist_type_product_cat ']"));
+        for (WebElement checkbox : checkboxes) {
+            abc.add(checkbox.getText());
+        }
+
        checkboxes.forEach(System.out::println);
 
      /*   for (WebElement w : checkboxes) {

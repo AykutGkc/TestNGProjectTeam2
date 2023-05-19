@@ -173,13 +173,26 @@ public class StoreManager {
     @FindBy (xpath = "(//div[@class='thumbnail'])[1]") public WebElement chooseImage;
     @FindBy (xpath = "//button[@class='button media-button button-primary button-large media-button-select']") public WebElement selectImageButton;
     @FindBy (id= "featured_img_remove_button") public WebElement imgRemoveButton;
-    @FindBy (xpath = "//*[text()='Shipping']") public WebElement shippingButton;
-    @FindBy (id = "//input[@id='weight']") public WebElement weightBox;
-    @FindBy (id = "//input[@id='length']") public WebElement lengthBox;
-    @FindBy (id = "//input[@id='width']") public WebElement widthBox;
-    @FindBy (id = "//input[@id='height']") public WebElement heightBox;
+    @FindBy (id = "wcfm_products_manage_form_shipping_head") public WebElement shippingButton;
+    @FindBy (xpath = "//input[@id='weight']") public WebElement weightBox;
     @FindBy (xpath = "//input[@class='wcfm-checkbox checklist_type_product_cat wcfm_validation_success']") public WebElement allCatogoriesCheckBox;
     @FindBy (xpath = "(//span[@class='required'])[1]") public WebElement categoriesText;
+    @FindBy (xpath = "//select[@id='shipping_class']") public WebElement shippingClass;
+    @FindBy (xpath = "//p[text()='+Add new category']") public WebElement addNewCategoriesButton;
+    @FindBy (id = "wcfm_new_cat") public WebElement categoryNameBox;
+    @FindBy (xpath = "//button[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt']") public WebElement addButtonCategories;
+    @FindBy (xpath = "//p[text()='+Add new Product brands']") public WebElement addNewBrandsButton;
+    @FindBy (id = "wcfm_new_product_brand") public WebElement brandsNameBox;
+    @FindBy (xpath = "//button[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt']") public WebElement addButtonBrands;
+    @FindBy (xpath = "//textarea[@id='product_tags']") public WebElement tagsBox;
+    @FindBy (xpath = "//select[@id='catalog_visibility']") public WebElement CatalogVisibility;
+    @FindBy (xpath = "//*[text()='Shop and search results']") public WebElement shopundeSearchResultsddm;
+    @FindBy (xpath = "//*[text()='Shop only']") public WebElement ShopOnlyddm;
+    @FindBy (xpath = "//*[text()='Search results only']") public WebElement SearchResultsOnlyddm;
+    @FindBy (xpath = "//*[text()='Hidden']") public WebElement Hiddenddm;
+
+
+
 
 
 
