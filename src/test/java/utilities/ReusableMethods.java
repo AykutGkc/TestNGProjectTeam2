@@ -8,6 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.StoreManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -200,6 +201,15 @@ public class ReusableMethods {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
+    }
+
+    //Attributes add size
+    static StoreManager storeManager = new StoreManager();
+
+    public static void addSize(String size) {
+        click(storeManager.addSizeButton);
+        ReusableMethods.alertprompt(size);
+        ReusableMethods.alertAccept();
     }
 
 }
