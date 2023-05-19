@@ -2,17 +2,15 @@ package tests.US15_Product;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.VendorProduct;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC05_Linked {
-
+public class TC08_Advanced {
     @Test
-    public void Linked() {
+    public void Advanced() {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
         VendorProduct vendorProduct=new VendorProduct();
@@ -33,19 +31,15 @@ public class TC05_Linked {
         Actions actions=new Actions(Driver.getDriver());//Action Objesi tiklandi
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();//Sayfanin asagina gidilir
         actions.sendKeys(Keys.ARROW_DOWN).perform();////Sayfanin asagina gidilir
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
         ReusableMethods.waitWithThreadSleep(2);
 
-        vendorProduct.linked.click();//Linked bolumu tiklanir
-        vendorProduct.upSells.sendKeys("ABCD");
-        Assert.assertTrue(vendorProduct.minimun3karaktergirilmeli.getText().contains("No matching result found"));
-        vendorProduct.croosSells.sendKeys("ADAA");
-        Assert.assertTrue(vendorProduct.minimun3karaktergirilmeli2.getText().contains("o matching result found"));
+        vendorProduct.advanced.click();
+        vendorProduct.enable.click();
+        vendorProduct.menuOrder.sendKeys("Test"+Keys.ENTER);
+        vendorProduct.purchaseNote.sendKeys("Testimiz Basarili ile Sonuclandi "+Keys.ENTER);
+        ReusableMethods.waitWithThreadSleep(2);
 
         Driver.closeDriver();
-
-
-
-
-
     }
 }

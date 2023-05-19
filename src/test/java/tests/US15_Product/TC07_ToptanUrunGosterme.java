@@ -2,17 +2,16 @@ package tests.US15_Product;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.VendorProduct;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC05_Linked {
-
+public class TC07_ToptanUrunGosterme {
     @Test
-    public void Linked() {
+    public void ToptanUrunGosterme() {
 
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
         VendorProduct vendorProduct=new VendorProduct();
@@ -35,13 +34,16 @@ public class TC05_Linked {
         actions.sendKeys(Keys.ARROW_DOWN).perform();////Sayfanin asagina gidilir
         ReusableMethods.waitWithThreadSleep(2);
 
-        vendorProduct.linked.click();//Linked bolumu tiklanir
-        vendorProduct.upSells.sendKeys("ABCD");
-        Assert.assertTrue(vendorProduct.minimun3karaktergirilmeli.getText().contains("No matching result found"));
-        vendorProduct.croosSells.sendKeys("ADAA");
-        Assert.assertTrue(vendorProduct.minimun3karaktergirilmeli2.getText().contains("o matching result found"));
+        vendorProduct.toptanUrunGosterme.click();
 
-        Driver.closeDriver();
+
+        Select select=new Select(vendorProduct.pieceTypeddm);
+        select.selectByVisibleText("Kg");
+        vendorProduct.unitPerPiece.sendKeys("10"+Keys.ENTER);
+        ReusableMethods.waitWithThreadSleep(2);
+        vendorProduct.minOrderQuantity.sendKeys("5"+Keys.ENTER);
+
+
 
 
 
