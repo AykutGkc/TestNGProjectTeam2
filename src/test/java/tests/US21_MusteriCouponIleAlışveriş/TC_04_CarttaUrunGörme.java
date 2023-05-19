@@ -20,13 +20,13 @@ public class TC_04_CarttaUrunGörme {
         Driver.getDriver().get(ConfigReader.getProperty("pearlyMarket_Url"));
         myAccountPage.accountButton.click();
         myAccountPage.accountsignInButton.click();
-        myAccountPage.usernameSignInInput.sendKeys(ConfigReader.getProperty("email"));
-        myAccountPage.passwordSignInInput.sendKeys(ConfigReader.getProperty("password"));
+        myAccountPage.usernameSignInInput.sendKeys(ConfigReader.getProperty("emaild"));
+        myAccountPage.passwordSignInInput.sendKeys(ConfigReader.getProperty("passwordd"));
         myAccountPage.signInloginButton.click();
         ReusableMethods.waitWithThreadSleep(4);
         myAccountPage.searchBox.click();
         ReusableMethods.waitWithThreadSleep(2);
-        myAccountPage.searchBox.sendKeys("Ayakkabı", Keys.ENTER);
+        myAccountPage.searchBox.sendKeys("Yastık", Keys.ENTER);
         ReusableMethods.visibleWait(homePage.myAccount, 15);
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].click();", myAccountPage.addtoCartSimgesi); //Tiklamayi bu sekilde handle ederiz

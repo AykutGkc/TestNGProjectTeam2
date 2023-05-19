@@ -17,6 +17,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@aria-label='Search']" ) public WebElement searchBox;
     @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']" ) public WebElement addtoCartSimgesi;
 
+    @FindBy(xpath = "//*[text()='Sign Out']" ) public WebElement signoutdogrulama;
 
 
 
