@@ -1,4 +1,4 @@
-package tests.US_003_AddBillingAdress;
+package tests.US003_AddBillingAdress;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
