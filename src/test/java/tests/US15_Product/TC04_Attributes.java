@@ -36,9 +36,14 @@ public class TC04_Attributes {
 
 
         vendorProduct.attributtes.click();
-        vendorProduct.color.sendKeys(ConfigReader.getProperty("color"+Keys.ENTER));
-        vendorProduct.visibleOnTheProductPage.click();//VisibleOntheProductPage tiklenir
-        vendorProduct.size.sendKeys(ConfigReader.getProperty("size"+Keys.ENTER));
+        vendorProduct.colortik.click();
+        vendorProduct.color.sendKeys(ConfigReader.getProperty("color"));
+        //vendorProduct.visibleOnTheProductPage.click();//VisibleOntheProductPage tiklenir
+        Actions actions1=new Actions(Driver.getDriver());//Action Objesi tiklanir
+        actions1.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();//Sayfanin asagina gidilir
+        ReusableMethods.waitWithThreadSleep(2);
+        vendorProduct.size1.click();
+        vendorProduct.size.sendKeys(ConfigReader.getProperty("size"));
 
 
 

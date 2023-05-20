@@ -39,7 +39,7 @@ public class VendorProduct {
         @FindBy(xpath = "//input[@id='weight']")
         public WebElement weight;
 
-        @FindBy(xpath = "//input[@id=length']")
+        @FindBy(xpath = "//input[@id='length']")
         public WebElement length;
 
         @FindBy(xpath = "//input[@id='width']")
@@ -81,7 +81,7 @@ public class VendorProduct {
         public WebElement unitPerPiece;
 
 
-        @FindBy (xpath = "//input[@id='minorderqtytr'")
+        @FindBy (xpath = "//input[@id='minorderqtytr']")
         public WebElement minOrderQuantity;
 
         @FindBy (xpath="//input[@id='enable_reviews']")
@@ -92,6 +92,12 @@ public class VendorProduct {
 
         @FindBy (xpath="//textarea[@id='purchase_note']")
         public WebElement purchaseNote;
+
+        @FindBy(xpath = "//input[@id='attributes_is_active_1']")
+        public WebElement colortik;
+
+        @FindBy(xpath="//input[@id='attributes_is_active_2']")
+        public WebElement size1;
 
 
 

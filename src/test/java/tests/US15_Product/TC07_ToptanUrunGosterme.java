@@ -42,7 +42,8 @@ public class TC07_ToptanUrunGosterme {
         vendorProduct.unitPerPiece.sendKeys("10"+Keys.ENTER);
         ReusableMethods.waitWithThreadSleep(2);
         vendorProduct.minOrderQuantity.sendKeys("5"+Keys.ENTER);
-
+        ReusableMethods.waitWithThreadSleep(5);
+        Driver.closeDriver();
 
 
 
