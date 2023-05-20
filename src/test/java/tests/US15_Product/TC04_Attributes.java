@@ -35,6 +35,7 @@ public class TC04_Attributes {
 
 
 
+
         vendorProduct.attributtes.click();
         vendorProduct.colortik.click();
         vendorProduct.color.sendKeys(ConfigReader.getProperty("color"));
@@ -44,6 +45,12 @@ public class TC04_Attributes {
         ReusableMethods.waitWithThreadSleep(2);
         vendorProduct.size1.click();
         vendorProduct.size.sendKeys(ConfigReader.getProperty("size"));
+
+   //     myAccountPage.attributtes.click();
+  //      myAccountPage.color.sendKeys(ConfigReader.getProperty("color"+Keys.ENTER));
+  //      myAccountPage.visibleOnTheProductPage.click();//VisibleOntheProductPage tiklenir
+  //      myAccountPage.size.sendKeys(ConfigReader.getProperty("size"+Keys.ENTER));
+
 
 
 

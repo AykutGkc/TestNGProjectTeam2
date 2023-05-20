@@ -12,61 +12,10 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_01_AddVariableProductAsAVender {
-    StoreManager storeManager=new StoreManager();
-    MyAccountPage myAccount=new MyAccountPage();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    StoreManager storeManager = new StoreManager();
+    MyAccountPage myAccount = new MyAccountPage();
 
 
     @Test
@@ -80,8 +29,8 @@ public class TC_01_AddVariableProductAsAVender {
         myAccount.accountButton.click();
         myAccount.accountsignInButton.click();
 
-        myAccount.usernameSignInInput.sendKeys(ConfigReader.getProperty("email"));
-        myAccount.passwordSignInInput.sendKeys(ConfigReader.getProperty("password"));
+        myAccount.usernameSignInInput.sendKeys(ConfigReader.getProperty("emailEmre"));
+        myAccount.passwordSignInInput.sendKeys(ConfigReader.getProperty("passwordEmre"));
         myAccount.signInloginButton.click();
 
         //Kullanici My account linkine tiklar
@@ -98,44 +47,44 @@ public class TC_01_AddVariableProductAsAVender {
 
         //Kullanici Products secenegine tiklar
         storeManager.productsLink.click();
-
-        //Kullanici "Add New" butonuna tiklar
-        storeManager.addNewProduct.click();
-
-        //Kullanici "Variable Product" i secer
-        storeManager.variablePruductDdm.click();
-
-        //Kullanici US14 ve US15 Adimlarini takip ederek yen bir urun ekleme islemlerini yapmalidir
-        //myAccount.virtualCheckbox.click();
-        storeManager.productTitleBox.sendKeys("Camping Tent", Keys.ENTER);
-      //  myAccount.priceBox.sendKeys("110" + Keys.ENTER);
-       // myAccount.salePriceBox.sendKeys("100" + Keys.ENTER);
-        storeManager.featuredImage.click();
-        storeManager.featuredImageUploadButton.click();
-        Thread.sleep(3000);
-        storeManager.featuredImageSelect.click();
-        storeManager.selectButton.click();
-        storeManager.galleryImage.click();
-    //    myAccount.mediaLibraryItem.click();
-        storeManager.selectImageForGallery.click();
-        storeManager.addToGalleryButton.click();
-        storeManager.addToGalleryButton.click();
-        storeManager.addCategoryName.sendKeys("Camping Accessories" + Keys.ENTER);
-        Select select = new Select(storeManager.addParentCategory);
-        select.selectByVisibleText("Sports");
-        storeManager.addBrandLink.click();
-        storeManager.addProductsBrandName.sendKeys("CampEmreProducts",Keys.ENTER);
-        storeManager.addProductsButton.click();
+        //Kullanici CampingTea maker urunune tiklar
+        storeManager.teaMakerProduit.click();
 
         //Kullanici sayfanin altindaki secenekler bolumunden "Attributes" secenegine tiklar
+        ReusableMethods.click(storeManager.attributesLink);
+
         //Kullanici acilan bolumden "Color" kutusunu aktif hale getirir
+        storeManager.colorCheckBox.click();
+
         //Kullanici "Add New" butonuna tiklar
-        //Kullanici urunun rengini girer	Bleu Ciel
+        ReusableMethods.click(storeManager.addColorButton);
+
+        //Kullanici urunun rengini girer	Gris Metal
+        ReusableMethods.alertprompt("Gris Metal4");
+        ReusableMethods.alertAccept();
+
+        //Kullanici acilan bolumden "Size" kutusunu aktif hale getirir
+        ReusableMethods.click(storeManager.sizeCheckBox);
+
         //Kullanici "Add New" butonuna tiklar
+
+
         //Kullanici urunun "Size" larini girer	S, M, L, XL
-        //Kullanici "Activite" kutucuguna tiklar
-        //Kullanici "Name" bolumune urunun ismini girer	Piknik semaveri
+        ReusableMethods.addSize("S--1");
+        ReusableMethods.addSize("M2--");
+        ReusableMethods.addSize("L--3");
+        ReusableMethods.addSize("XL--4");
+
+        //Kullanici "Add attribute" kutucuguna tiklar
+        ReusableMethods.click(storeManager.addAttributeButton);
+
+        //Kullanici "Name" bolumune urunun ismini girer	"Picnic Teapot - Semaver"
+        storeManager.addAttributeName.sendKeys("Picnic Teapot - Semaver");
+
         //Kullanici Submit butonuna tiklar
+        ReusableMethods.click(storeManager.submitButton);
+
         //Kullanici Sayfayi kapatir
+        Driver.closeDriver();
     }
 }

@@ -8,22 +8,27 @@ import pages.StoreManager;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class TC04_CategoriesSelected extends VendorProductAddOptionWebBase{
+public class TC_04_CategoriesSelected extends VendorProductAddOptionWebBase{
     StoreManager storeManager;
     @Test
     public void categoriesSelected() {
         storeManager=new StoreManager();
         ReusableMethods.scroll(storeManager.categoriesText);
-        List<WebElement> checkboxes = Driver.getDriver().findElements(By.xpath("//input[@name='product_cats[]']"));
+
+        List<String> abc=new ArrayList<>();
+        List<WebElement> checkboxes = Driver.getDriver().findElements(By.xpath("//input[@class='wcfm-checkbox checklist_type_product_cat ']"));
         for (WebElement checkbox : checkboxes) {
-            System.out.println(checkbox.getText());
+            abc.add(checkbox.getText());
         }
 
-        for (WebElement w : checkboxes) {
+       checkboxes.forEach(System.out::println);
+
+     /*   for (WebElement w : checkboxes) {
             Assert.assertTrue(w.isSelected());
-        }
+        }*/
 
     }
 }

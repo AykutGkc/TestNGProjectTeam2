@@ -1,6 +1,7 @@
 package tests.US12_VendorBillingAddress;
 
 
+import com.aventstack.extentreports.ExtentReports;
 import org.openqa.selenium.Keys;
         import org.openqa.selenium.support.ui.Select;
         import org.testng.Assert;
@@ -15,8 +16,9 @@ public class TC_02_VendorBillingAddressPositivTest {
     @Test
     public void billingAddressTest() throws InterruptedException {
 
+ReusableMethods.extentReportParametreli("Nihat","billingAddressTest" );
         Driver.getDriver().get(ConfigReader.getProperty("site_Url"));
-
+ReusableMethods.extentTest.info("Siteye gidildi.");
         MyAccountPage myAccountPage = new MyAccountPage();
 
         myAccountPage.signIn.click();
@@ -86,6 +88,10 @@ public class TC_02_VendorBillingAddressPositivTest {
         Thread.sleep(2000);
         myAccountPage.logout.click();
 
+        ReusableMethods.extentReports.flush();
         Driver.closeDriver();
+
+
+
     }
 }
