@@ -118,8 +118,6 @@ public class MyAccountPage {
 
 
 
-
-
 //RamazanBey
 
 @FindBy(xpath="(//*[text()='Sign In'])[1]") public WebElement signin;
@@ -320,11 +318,6 @@ public class MyAccountPage {
 
 
 
-
-
-
-
-
     // Nihat G
     @FindBy(xpath = "//*[@class='login inline-type']") public WebElement signIn;
     @FindBy(xpath = "(//input[@id='username'])[1]") public WebElement signInEmail;
@@ -363,11 +356,19 @@ public class MyAccountPage {
 
 
 
+
     //Nihat G
 
 
 
-//murat
+
+
+
+
+
+
+
+    //murat
 @FindBy(xpath = "//*[text()='Register']")
 public WebElement Register;
     @FindBy(xpath = "//*[text()='Sign In']")
@@ -417,7 +418,11 @@ public WebElement Register;
 
 
 
+//Huri
 
+   @FindBy(xpath = "//*[@id='regular_price']") public WebElement price;
+    @FindBy(xpath = "(//*[@id='shipping_class'])[1]") public WebElement shippingclass;
+    @FindBy(xpath = "//h2[text()='Add Product']") public WebElement addProduct;
 
 
 
