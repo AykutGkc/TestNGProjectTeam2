@@ -193,7 +193,8 @@ public class StoreManager {
     @FindBy (xpath = "//*[text()='Hidden']") public WebElement Hiddenddm;
     @FindBy(xpath = "//*[@id=\"menu-item-browse\"]") public WebElement mediaLibraryItem;
 
-
+    @FindBy(xpath = "//*[@class='wcfm-checkbox checklist_type_product_cat ']") public WebElement tıklama;
+    @FindBy(xpath = "//*[@name='product_cats[]']") public WebElement toplutıklama;
 
 
 
