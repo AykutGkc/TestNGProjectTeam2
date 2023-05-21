@@ -36,16 +36,16 @@ public class TC08ProductsGoruntulenmesi {
         js.executeScript("arguments[0].click();", text); //Tiklamayi bu sekilde handle ederiz
 
         //Kullanici Store Manager secenegine tiklar
-        storeManager.storeManagerLink.click();
+       ReusableMethods.click(myAccountPage.storeManager);
 
         //Kullanici Products secenegine tiklar
-        storeManager.productsLink.click();
+        ReusableMethods.click(myAccountPage.products);
 
         //Kullanici "Add New" butonuna tiklar
         storeManager.addNewProduct.click();
 
         //Kullanici "Variable Product" i secer
-        storeManager.variablePruductDdm.click();
+        ReusableMethods.click(storeManager.variablePruductDdm);
 
 
         storeManager.productTitleBox.sendKeys("VAZO", Keys.ENTER);

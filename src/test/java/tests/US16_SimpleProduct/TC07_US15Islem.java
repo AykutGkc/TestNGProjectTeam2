@@ -24,7 +24,7 @@ public class TC07_US15Islem {
         myAccountRmzn.password.sendKeys(ConfigReader.getProperty("sifree"));
         ReusableMethods.waitWithThreadSleep(2);
         myAccountRmzn.signinSubmit.click();
-        myAccountRmzn.signout.click();
+       ReusableMethods.click(myAccountRmzn.signout);
         myAccountRmzn.storeManeger.click();
         myAccountRmzn.product.click();
         myAccountRmzn.addNew.click();
