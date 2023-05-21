@@ -142,11 +142,11 @@ public class MyAccountPage {
     @FindBy(xpath="//select[@id='stock_status']") public WebElement stockstuckddm;
     @FindBy(xpath="//input[@id='sold_individually']") public WebElement soldindividually;
  @FindBy(xpath = "//input[@id='weight']") public WebElement weight;
-<<<<<<< HEAD
+
 @FindBy(xpath = "//*[@id='length']")public WebElement length;
-=======
-@FindBy(xpath = "//input[@id='length']")public WebElement length;
->>>>>>> master
+
+@FindBy(xpath = "//input[@id='length']")public WebElement lengthh;
+
 @FindBy(xpath = "//input[@id='length']") public WebElement width;
  @FindBy (xpath = "//input[@id='height']") public WebElement height;
     @FindBy(xpath = "(//input[@class='select2-search__field'])[2]") public WebElement color;
