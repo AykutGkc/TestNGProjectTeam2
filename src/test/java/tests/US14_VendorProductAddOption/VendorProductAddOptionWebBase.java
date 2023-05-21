@@ -34,6 +34,6 @@ public class VendorProductAddOptionWebBase {
 
     @AfterMethod
     public void tearDown() {
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 }
