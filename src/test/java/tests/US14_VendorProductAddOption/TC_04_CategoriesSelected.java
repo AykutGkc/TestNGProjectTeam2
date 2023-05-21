@@ -1,6 +1,7 @@
 package tests.US14_VendorProductAddOption;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,17 +19,16 @@ public class TC_04_CategoriesSelected extends VendorProductAddOptionWebBase{
         storeManager=new StoreManager();
         ReusableMethods.scroll(storeManager.categoriesText);
 
-        List<String> abc=new ArrayList<>();
-        List<WebElement> checkboxes = Driver.getDriver().findElements(By.xpath("//input[@class='wcfm-checkbox checklist_type_product_cat ']"));
-        for (WebElement checkbox : checkboxes) {
-            abc.add(checkbox.getText());
+        for (int i = 1; i <185 ; i++) {
+            WebElement checkboxes = Driver.getDriver().findElement(By.xpath("(//*[@name='product_cats[]'])["+i+"]"));
+            JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+            js.executeScript("arguments[0].click();", checkboxes); //Tiklamayi bu sekilde handle ederiz
+        }
+        for (int i = 1; i <185 ; i++) {
+            WebElement checkboxes = Driver.getDriver().findElement(By.xpath("(//*[@name='product_cats[]'])["+i+"]"));
+            Assert.assertTrue(checkboxes.isSelected());
         }
 
-       checkboxes.forEach(System.out::println);
-
-     /*   for (WebElement w : checkboxes) {
-            Assert.assertTrue(w.isSelected());
-        }*/
 
     }
 }
