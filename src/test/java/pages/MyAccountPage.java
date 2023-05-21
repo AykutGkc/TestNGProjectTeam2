@@ -142,7 +142,6 @@ public class MyAccountPage {
     @FindBy(xpath="//select[@id='stock_status']") public WebElement stockstuckddm;
     @FindBy(xpath="//input[@id='sold_individually']") public WebElement soldindividually;
  @FindBy(xpath = "//input[@id='weight']") public WebElement weight;
-
 @FindBy(xpath = "//*[@id='length']")public WebElement length;
 @FindBy(xpath = "//input[@id='length']") public WebElement width;
  @FindBy (xpath = "//input[@id='height']") public WebElement height;
@@ -421,7 +420,7 @@ public WebElement Register;
 
 //Huri
 
-   @FindBy(xpath = "//*[@id='regular_price']") public WebElement price;
+    @FindBy(xpath = "//*[@id='regular_price']") public WebElement price;
     @FindBy(xpath = "(//*[@id='shipping_class'])[1]") public WebElement shippingclass;
     @FindBy(xpath = "//h2[text()='Add Product']") public WebElement addProduct;
 
