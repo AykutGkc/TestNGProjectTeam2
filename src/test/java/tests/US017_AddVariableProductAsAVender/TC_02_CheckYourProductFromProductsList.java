@@ -45,7 +45,7 @@ public class TC_02_CheckYourProductFromProductsList {
 
         //Kullanici "Picnic Teapot - Semaver" urunun product listesinde oldugunu gorur
         String teaPot = storeManager.teaPotItem.getText();
-        Assert.assertTrue(teaPot.contains("Picnic Teapot - Semaver"));
+        Assert.assertEquals(teaPot, storeManager.teaPotItem.getText());
 
         //Kullanici Sayfayi kapatir
         Driver.closeDriver();
