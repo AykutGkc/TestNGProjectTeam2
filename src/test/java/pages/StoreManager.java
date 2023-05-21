@@ -168,7 +168,6 @@ public class StoreManager {
 
 
 
-
     @FindBy (id = "product_type") public WebElement ddmMenüProducktType;
     @FindBy (id = "featured_img_display") public WebElement imageAddFeld;
     @FindBy (xpath = "(//div[@class='thumbnail'])[1]") public WebElement chooseImage;
@@ -192,6 +191,10 @@ public class StoreManager {
     @FindBy (xpath = "//*[text()='Search results only']") public WebElement SearchResultsOnlyddm;
     @FindBy (xpath = "//*[text()='Hidden']") public WebElement Hiddenddm;
     @FindBy(xpath = "//*[@id=\"menu-item-browse\"]") public WebElement mediaLibraryItem;
+    @FindBy(id = "tinymce") public WebElement description;
+    @FindBy(id = "pro_title") public WebElement productTitle;
+    @FindBy(xpath = "//*[@id=\"tinymce\"]/p") public WebElement textShortDescription;
+    @FindBy(xpath = "//*[@id=\"tinymce\"]/p") public WebElement textDescription;
 
 
 

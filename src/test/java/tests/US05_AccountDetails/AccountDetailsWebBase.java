@@ -1,5 +1,6 @@
 package tests.US05_AccountDetails;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -16,26 +17,26 @@ public class AccountDetailsWebBase {
     @BeforeTest
     public void setUp() {
 
-        HomePage homePage = new HomePage();
-        MyAccountPage myAccountPage = new MyAccountPage();
-        Driver.getDriver().get(ConfigReader.getProperty("homePage_Url"));
-        homePage.signIn.click();
-        //Giris yapildi
-        homePage.usernameOrEmailAddressKutusu.sendKeys(ConfigReader.getProperty("NewEmailAddress"), Keys.TAB, ConfigReader.getProperty("passwordSuhass"), Keys.ENTER);
-        ReusableMethods.waitWithThreadSleep(3);
-        ReusableMethods.scrollEnd();
-        ReusableMethods.visibleWait(homePage.myAccount, 15);
-
-        //MyAccount sayfasina gidildi
-
-        homePage.myAccount.click();
-        ReusableMethods.waitWithThreadSleep(3);
-        ReusableMethods.scrollEnd();
-        ReusableMethods.waitWithThreadSleep(3);
-        //Account Details sayfasina tiklandi
+        Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
+        MyAccountPage myAccountPage=new MyAccountPage();
+        myAccountPage.signin.click();//Sign in Tiklandi
+        ReusableMethods.waitWithThreadSleep(2);
+        myAccountPage.username.click();//UsernameK kismi Tiklandi
+        ReusableMethods.waitWithThreadSleep(2);
+        myAccountPage.username.sendKeys(ConfigReader.getProperty("NewEmailAddress"));//Email girildi
+        ReusableMethods.waitWithThreadSleep(2);
+        myAccountPage.password.click();//Password tiklandi
+        myAccountPage.password.sendKeys(ConfigReader.getProperty("passwordSuhass"));//Password girildi
+        ReusableMethods.waitWithThreadSleep(2);
+        myAccountPage.signinSubmit.click();//Sing in tiklandi
+        myAccountPage.signout.click();//Signout tiklandi
+        ReusableMethods.scroll(myAccountPage.accountDetails);
         myAccountPage.accountDetails.click();
 
     }
+
+
+
 
     @AfterTest
     public void tearDown() {
@@ -47,7 +48,9 @@ public class AccountDetailsWebBase {
         MyAccountPage myAccount = new MyAccountPage();
         AccountDetailsPage accountDetailsPage =new AccountDetailsPage();
 
-        myAccount.saveChangesButton.click();
+        ReusableMethods.scroll(myAccount.saveChangesButton);
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();",myAccount.saveChangesButton ); //Tiklamayi bu sekilde handle ederiz
         Assert.assertTrue(accountDetailsPage.changeSucces.isDisplayed());
     }
     
