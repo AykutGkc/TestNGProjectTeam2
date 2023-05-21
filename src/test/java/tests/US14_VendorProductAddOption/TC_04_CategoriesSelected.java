@@ -23,12 +23,16 @@ public class TC_04_CategoriesSelected extends VendorProductAddOptionWebBase{
             WebElement checkboxes = Driver.getDriver().findElement(By.xpath("(//*[@name='product_cats[]'])["+i+"]"));
             JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
             js.executeScript("arguments[0].click();", checkboxes); //Tiklamayi bu sekilde handle ederiz
+
         }
         for (int i = 1; i <185 ; i++) {
             WebElement checkboxes = Driver.getDriver().findElement(By.xpath("(//*[@name='product_cats[]'])["+i+"]"));
             Assert.assertTrue(checkboxes.isSelected());
         }
 
+        }
 
-    }
+
+
+
 }

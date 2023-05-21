@@ -38,7 +38,7 @@ public class TC08_Advanced {
         vendorProduct.enable.click();
         vendorProduct.menuOrder.sendKeys("Test"+Keys.ENTER);
         vendorProduct.purchaseNote.sendKeys("Testimiz Basarili ile Sonuclandi "+Keys.ENTER);
-        ReusableMethods.waitWithThreadSleep(2);
+        ReusableMethods.waitWithThreadSleep(5);
 
         Driver.closeDriver();
     }

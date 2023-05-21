@@ -1,5 +1,6 @@
 package tests.US15_Product;
 
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -36,14 +37,18 @@ public class TC03_Shipping {
         ReusableMethods.waitWithThreadSleep(2);
 
         vendorProduct.shipping.click();
-        vendorProduct.weight.sendKeys(ConfigReader.getProperty("weight"+Keys.ENTER));
+        vendorProduct.weight.sendKeys(ConfigReader.getProperty("weight"));
+
+        vendorProduct.length.sendKeys(ConfigReader.getProperty("length"));
+       vendorProduct.width.sendKeys(ConfigReader.getProperty("width"));
+
+
+        vendorProduct.height.sendKeys(ConfigReader.getProperty("height"));
+
+
         ReusableMethods.waitWithThreadSleep(2);
-        vendorProduct.length.sendKeys(ConfigReader.getProperty("length"+Keys.ENTER));
-        ReusableMethods.waitWithThreadSleep(2);
-        vendorProduct.height.sendKeys(ConfigReader.getProperty("width"+Keys.ENTER));
-        ReusableMethods.waitWithThreadSleep(2);
-        vendorProduct.height.sendKeys(ConfigReader.getProperty("height"+Keys.ENTER));
-        ReusableMethods.waitWithThreadSleep(2);
+
+        Driver.closeDriver();
 
 
 

@@ -37,6 +37,7 @@ public class TC06_SeoIslemler {
         vendorProduct.seo.click();
         vendorProduct.enterafocuskeyword.sendKeys("Seo Islem1"+Keys.ENTER);
         vendorProduct.metadescription.sendKeys("Seo Islem2"+Keys.ENTER);
+        ReusableMethods.waitWithThreadSleep(5);
         Driver.closeDriver();
 
 
