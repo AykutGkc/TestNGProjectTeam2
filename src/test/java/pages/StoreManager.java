@@ -196,7 +196,8 @@ public class StoreManager {
     @FindBy(xpath = "//*[@id=\"tinymce\"]/p") public WebElement textShortDescription;
     @FindBy(xpath = "//*[@id=\"tinymce\"]/p") public WebElement textDescription;
 
-
+    @FindBy(xpath = "//*[@class='wcfm-checkbox checklist_type_product_cat ']") public WebElement tıklama;
+    @FindBy(xpath = "//*[@name='product_cats[]']") public WebElement toplutıklama;
 
 
 
