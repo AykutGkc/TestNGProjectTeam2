@@ -1,12 +1,15 @@
 package tests.US14_VendorProductAddOption;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.*;
 import pages.MyAccountPage;
+import pages.StoreManager;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class VendorProductAddOptionWebBase {
+    StoreManager storeManager=new StoreManager();
     @BeforeMethod
     public void setUp() {
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));//pearly Adresine Gidildi
@@ -25,10 +28,12 @@ public class VendorProductAddOptionWebBase {
         myAccountPage.storeManeger.click();//StoreManager tiklanir
         myAccountPage.product.click();//Product tiklanir
         myAccountPage.addNew.click();//Addnew tiklanir
+
+
     }
 
     @AfterMethod
     public void tearDown() {
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 }

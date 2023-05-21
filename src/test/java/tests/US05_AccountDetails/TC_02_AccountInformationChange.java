@@ -24,7 +24,7 @@ public class TC_02_AccountInformationChange extends AccountDetailsWebBase{
                 ConfigReader.getProperty("NewDisplayName"),Keys.TAB,Keys.DELETE,
                 ConfigReader.getProperty("NewEmailAddress"));
         ReusableMethods.waitWithThreadSleep(2);
-        ReusableMethods.scrollEnd();
+        ReusableMethods.scroll(myAccountPage.saveChangesButton);
         AccountDetailsWebBase.saveChangesAndSucces();
 
 
